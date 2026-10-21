@@ -1,0 +1,16 @@
+#!/bin/sh
+# KLayout CLI wrapper. The Homebrew cask is disabled (Gatekeeper), so Phase 0 installed
+# KLayout 0.30.12 from nixpkgs (`nix profile add nixpkgs#klayout`), which ships only an
+# .app bundle (no bin/). This wrapper exposes it as `klayout` for batch (-b) and GUI use.
+for app in \
+  "$HOME/.local/state/nix/profiles/profile/Applications/klayout.app" \
+  "$HOME/.local/state/nix/profile/Applications/klayout.app" \
+  "$HOME/.nix-profile/Applications/klayout.app" \
+  /Applications/klayout.app \
+  "$HOME/Applications/klayout.app"; do
+  if [ -x "$app/Contents/MacOS/klayout" ]; then
+    exec "$app/Contents/MacOS/klayout" "$@"
+  fi
+done
+echo "klayout: no klayout.app found (run: nix profile add nixpkgs#klayout)" >&2
+exit 127

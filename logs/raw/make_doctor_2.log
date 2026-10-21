@@ -1,0 +1,20 @@
+spec2tapeout doctor — 2026-10-21 01:28:13
+  PDK_ROOT=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk  PDK=sky130A
+  [32mOK[0m   python         Python 3.11.15
+  [32mOK[0m   librelane      LibreLane v3.0.16
+  [32mOK[0m   ciel           Ciel v2.6.1 ©2022-2025 Efabless Corporation and Contributors
+  [32mOK[0m   pdk            sky130A @ /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk (open_pdks 8afc8346)
+  [32mOK[0m   docker         Docker Engine 29.4.3
+  [32mOK[0m   image          ghcr.io/librelane/librelane:3.0.16 sha256:02d50f259d483979e126ef188a50f5
+  [32mOK[0m   iverilog       Icarus Verilog version 13.0 (stable) (v13_0)
+  [32mOK[0m   verilator      Verilator 5.052 2026-09-05 rev vUNKNOWN-built20260905
+  [32mOK[0m   yosys          Yosys 0.70+post (git sha1 0c11ea098be065e585a90a06e7b7da49936cf231, Release, AppleClang clang++ 21.0.0.21000334)
+  [32mOK[0m   surfer         surfer 0.7.0 (git: v0.7.0)
+  [32mOK[0m   klayout        KLayout 0.30.12
+  [32mOK[0m   cocotb         cocotb 2.1.0
+  [32mOK[0m   gdstk          gdstk 1.0.2
+  [32mOK[0m   matplotlib     matplotlib 3.11.2
+  [32mOK[0m   pyyaml         yaml 6.0.3
+  [32mOK[0m   klayout-py     klayout 0.30.12
+  [32mOK[0m   nix            nix (Determinate Nix 3.23.3) 2.35.3
+doctor: all tools present

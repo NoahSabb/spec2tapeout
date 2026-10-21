@@ -1,0 +1,71 @@
+START 2026-10-21 01:20:09
+Collecting librelane==3.0.16
+  Downloading librelane-3.0.16-py3-none-any.whl.metadata (8.8 kB)
+Requirement already satisfied: ciel<3,>=2.3.1 in ./.venv/lib/python3.11/site-packages (from librelane==3.0.16) (2.6.1)
+Collecting click<8.3,>=8 (from librelane==3.0.16)
+  Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+Collecting cloup<4,>=3.0.5 (from librelane==3.0.16)
+  Downloading cloup-3.1.0-py2.py3-none-any.whl.metadata (6.4 kB)
+Collecting deprecated<2,>=1.2.10 (from librelane==3.0.16)
+  Downloading deprecated-1.3.1-py2.py3-none-any.whl.metadata (5.9 kB)
+Requirement already satisfied: httpx<0.29,>=0.22.0 in ./.venv/lib/python3.11/site-packages (from librelane==3.0.16) (0.28.1)
+Collecting klayout<0.32.0,>=0.29.0 (from librelane==3.0.16)
+  Downloading klayout-0.30.12-cp311-cp311-macosx_11_0_arm64.whl.metadata (868 bytes)
+Collecting lln-libparse==0.56.* (from librelane==3.0.16)
+  Downloading lln_libparse-0.56.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (3.8 kB)
+Collecting lxml>=4.9.0 (from librelane==3.0.16)
+  Downloading lxml-6.1.3-cp311-cp311-macosx_10_9_universal2.whl.metadata (3.3 kB)
+Collecting psutil>=5.9.0 (from librelane==3.0.16)
+  Using cached psutil-7.2.2-cp36-abi3-macosx_11_0_arm64.whl.metadata (22 kB)
+Requirement already satisfied: pyyaml<7,>=5 in ./.venv/lib/python3.11/site-packages (from librelane==3.0.16) (6.0.3)
+Collecting rapidfuzz<4,>=3.9.0 (from librelane==3.0.16)
+  Downloading rapidfuzz-3.14.6-cp311-cp311-macosx_11_0_arm64.whl.metadata (12 kB)
+Requirement already satisfied: rich<16,>=12 in ./.venv/lib/python3.11/site-packages (from librelane==3.0.16) (15.0.0)
+Collecting semver<4,>=3.0.2 (from librelane==3.0.16)
+  Downloading semver-3.1.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting yamlcore<0.1.0,>=0.0.2 (from librelane==3.0.16)
+  Downloading yamlcore-0.0.4-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: pcpp<2,>=1.2 in ./.venv/lib/python3.11/site-packages (from ciel<3,>=2.3.1->librelane==3.0.16) (1.30)
+Requirement already satisfied: zstandard<1,>=0.19.0 in ./.venv/lib/python3.11/site-packages (from ciel<3,>=2.3.1->librelane==3.0.16) (0.25.0)
+Collecting wrapt<3,>=1.10 (from deprecated<2,>=1.2.10->librelane==3.0.16)
+  Downloading wrapt-2.5.1-cp311-cp311-macosx_11_0_arm64.whl.metadata (7.6 kB)
+Requirement already satisfied: anyio in ./.venv/lib/python3.11/site-packages (from httpx<0.29,>=0.22.0->librelane==3.0.16) (4.15.1)
+Requirement already satisfied: certifi in ./.venv/lib/python3.11/site-packages (from httpx<0.29,>=0.22.0->librelane==3.0.16) (2026.10.19)
+Requirement already satisfied: httpcore==1.* in ./.venv/lib/python3.11/site-packages (from httpx<0.29,>=0.22.0->librelane==3.0.16) (1.0.9)
+Requirement already satisfied: idna in ./.venv/lib/python3.11/site-packages (from httpx<0.29,>=0.22.0->librelane==3.0.16) (3.20)
+Requirement already satisfied: h11>=0.16 in ./.venv/lib/python3.11/site-packages (from httpcore==1.*->httpx<0.29,>=0.22.0->librelane==3.0.16) (0.16.0)
+Collecting wheel (from lln-libparse==0.56.*->librelane==3.0.16)
+  Downloading wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.venv/lib/python3.11/site-packages (from rich<16,>=12->librelane==3.0.16) (4.2.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.venv/lib/python3.11/site-packages (from rich<16,>=12->librelane==3.0.16) (2.21.0)
+Requirement already satisfied: mdurl~=0.1 in ./.venv/lib/python3.11/site-packages (from markdown-it-py>=2.2.0->rich<16,>=12->librelane==3.0.16) (0.1.2)
+Requirement already satisfied: typing_extensions>=4.16.0 in ./.venv/lib/python3.11/site-packages (from anyio->httpx<0.29,>=0.22.0->librelane==3.0.16) (4.16.0)
+Requirement already satisfied: packaging>=24.0 in ./.venv/lib/python3.11/site-packages (from wheel->lln-libparse==0.56.*->librelane==3.0.16) (26.3)
+Downloading librelane-3.0.16-py3-none-any.whl (426 kB)
+Downloading click-8.2.1-py3-none-any.whl (102 kB)
+Downloading cloup-3.1.0-py2.py3-none-any.whl (55 kB)
+Downloading deprecated-1.3.1-py2.py3-none-any.whl (11 kB)
+Downloading klayout-0.30.12-cp311-cp311-macosx_11_0_arm64.whl (21.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.4/21.4 MB 19.6 MB/s  0:00:01
+Downloading lln_libparse-0.56.0-cp311-cp311-macosx_11_0_arm64.whl (118 kB)
+Downloading rapidfuzz-3.14.6-cp311-cp311-macosx_11_0_arm64.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 11.3 MB/s  0:00:00
+Downloading semver-3.1.0-py3-none-any.whl (18 kB)
+Downloading wrapt-2.5.1-cp311-cp311-macosx_11_0_arm64.whl (105 kB)
+Downloading yamlcore-0.0.4-py3-none-any.whl (6.0 kB)
+Downloading lxml-6.1.3-cp311-cp311-macosx_10_9_universal2.whl (8.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.6/8.6 MB 20.9 MB/s  0:00:00
+Using cached psutil-7.2.2-cp36-abi3-macosx_11_0_arm64.whl (129 kB)
+Downloading wheel-0.48.0-py3-none-any.whl (33 kB)
+Installing collected packages: klayout, yamlcore, wrapt, wheel, semver, rapidfuzz, psutil, lxml, click, lln-libparse, deprecated, cloup, librelane
+  Attempting uninstall: click
+    Found existing installation: click 8.4.2
+    Uninstalling click-8.4.2:
+      Successfully uninstalled click-8.4.2
+
+Successfully installed click-8.2.1 cloup-3.1.0 deprecated-1.3.1 klayout-0.30.12 librelane-3.0.16 lln-libparse-0.56.0 lxml-6.1.3 psutil-7.2.2 rapidfuzz-3.14.6 semver-3.1.0 wheel-0.48.0 wrapt-2.5.1 yamlcore-0.0.4
+.venv/bin/python -m pip install "librelane==3.0.16"  1.40s user 0.62s system 31% cpu 6.302 total
+rc=0
+ciel              2.6.1
+librelane         3.0.16
+END 2026-10-21 01:20:15

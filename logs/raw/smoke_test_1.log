@@ -1,0 +1,8 @@
+START 2026-10-21 01:23:39
+warning: nix-channel is deprecated in favor of flakes in Determinate Nix. See https://zero-to-nix.com for a guide to Nix flakes. For details and to offer feedback on the deprecation process, see: https://github.com/DeterminateSystems/nix-src/issues/34.
+WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+[01:23:41] INFO     Running containerized command:              container.py:285
+cannot attach stdin to a TTY-enabled container because stdin is not a terminal
+librelane --dockerized --docker-no-tty --pdk-root "$PDK_ROOT" --smoke-test  0.13s user 0.06s system 15% cpu 1.276 total
+rc=1
+END 2026-10-21 01:23:41

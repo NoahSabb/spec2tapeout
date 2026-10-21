@@ -1,0 +1,23 @@
+START 2026-10-21 01:21:19
+Version 8afc8346a57fe1ab7934ba5a6056ea8b43078e71 not found locally, attempting 
+to download…
+Downloading common.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_fd_io.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_fd_pr.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_fd_sc_hd.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_fd_sc_hvl.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_ml_xx_hd.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Downloading sky130_sram_macros.tar.zst… ━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Version 8afc8346a57fe1ab7934ba5a6056ea8b43078e71 enabled for the sky130 PDK.
+.venv/bin/ciel enable --pdk-family sky130 --pdk-root "$PWD/pdk"   5.29s user 6.23s system 27% cpu 41.697 total
+rc=0
+END 2026-10-21 01:22:00
+total 0
+drwxr-xr-x  5 noahsabbavarapu  staff  160 Oct 21 01:22 .
+drwxr-xr-x@ 7 noahsabbavarapu  staff  224 Oct 21 01:21 ..
+drwxr-xr-x  3 noahsabbavarapu  staff   96 Oct 21 01:21 ciel
+lrwxr-xr-x  1 noahsabbavarapu  staff   69 Oct 21 01:22 sky130A -> ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130A
+lrwxr-xr-x  1 noahsabbavarapu  staff   69 Oct 21 01:22 sky130B -> ciel/sky130/versions/8afc8346a57fe1ab7934ba5a6056ea8b43078e71/sky130B
+2.1G	/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk/ciel
+  0B	/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk/sky130A
+  0B	/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk/sky130B

@@ -1,0 +1,19 @@
+Error response from daemon: Docker Desktop is unable to start
+Traceback (most recent call last):
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/lib/python3.11/site-packages/librelane/__main__.py", line 340, in cli_in_container
+    run_in_container(
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/lib/python3.11/site-packages/librelane/container.py", line 184, in run_in_container
+    osinfo = OSInfo.get()
+             ^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/lib/python3.11/site-packages/librelane/env_info.py", line 278, in get
+    osinfo.container_info = ContainerInfo.get()
+                            ^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/lib/python3.11/site-packages/librelane/env_info.py", line 115, in get
+    for option in security_options:
+TypeError: 'NoneType' object is not iterable
+[01:31:17] ERROR    'NoneType' object is not iterable            __main__.py:352
+
+real	0m0.525s
+user	0m0.381s
+sys	0m0.185s
+make: *** [smoke] Error 1

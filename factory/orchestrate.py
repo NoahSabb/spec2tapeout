@@ -242,7 +242,7 @@ def rules(symptom, k, cfg):
         ("lower utilization by 10 (more room for resizer, shorter wires)", {"FP_CORE_UTIL": max(25, util - 10), "PL_TARGET_DENSITY_PCT": max(35, util - 10) + 10}),
         ("relax CLOCK_PERIOD by 10 % (cap 20 ns standalone)", {"CLOCK_PERIOD": round(min(20.0, cp * 1.1), 2)}),
         ("synthesis strategy DELAY 4 (ORFS delay script) + CSA adders", {"SYNTH_STRATEGY": "DELAY 4", "SYNTH_ADDER_TYPE": "CSA"}),
-      ],
+      ] + [("relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)", {"CLOCK_PERIOD": round(min(20.0, cp * 1.1), 2)})] * 6,
       "congestion": [
         ("lower PL_TARGET_DENSITY_PCT by 10", {"PL_TARGET_DENSITY_PCT": max(35, dens - 10)}),
         ("raise GRT_ADJUSTMENT by 0.1 (more global-routing headroom)", {"GRT_ADJUSTMENT": min(0.6, float(cfg.get("GRT_ADJUSTMENT", 0.3)) + 0.1)}),
@@ -272,16 +272,54 @@ def rules(symptom, k, cfg):
     lst = R.get(symptom, [])
     return lst[k] if k < len(lst) else None
 
-def closure(config_path, design, tag, max_attempts):
+def already_applied(changes, cfg):
+    """True when every change is already in effect."""
+    return all(cfg.get(k) == v for k, v in changes.items())
+
+def regressed(d):
+    """A decision whose 'after' setup slack is clearly worse than 'before' (the rule hurt; never retry it in this series)."""
+    try: return float(d["after"]["timing__setup__ws"]) < float(d["before"]["timing__setup__ws"]) - 0.5
+    except Exception: return False
+
+def closure(config_path, design, tag, max_attempts, resume=False, from_attempt=None):
     base = jload(config_path); cfg = copy.deepcopy(base); counts = {}
     decisions = jload(os.path.join(STATE, "decisions.json"), [])
-    best = None
-    for attempt in range(1, max_attempts + 1):
+    best = None; best_ws = None; first = 1; skip = []
+    gates = jload(os.path.join(STATE, "gates.json"), {})
+    def consider(atag, rc, metrics):
+        nonlocal best, best_ws
+        ws = metrics.get("timing__setup__ws")
+        if rc == 0: best = atag
+        elif best is None or (ws is not None and (best_ws is None or float(ws) > best_ws)): best, best_ws = atag, (float(ws) if ws is not None else best_ws)
+    if resume:
+        mine = [d for d in decisions if d.get("series") == tag]
+        skip = [{k: v[1] for k, v in d["changes"].items()} for d in mine if regressed(d)]
+        for d in mine:   # the best run so far across the whole series (passing run, else least negative setup slack)
+            t = d["tag_before"]; g = gates.get(f"harden-{t}")
+            if g: consider(t, g["exit_code"], final_metrics(os.path.join(ROOT, "runs", t))[0])
+        if mine:
+            last = mine[-1]; first = last["attempt"] + 1
+            if from_attempt:
+                # restart from an earlier attempt's configuration; later decisions are kept in the ledger but marked abandoned
+                cfg = jload(os.path.join(os.path.dirname(config_path), f"config_{tag}-a{from_attempt}.json"), cfg)
+                for d in mine:
+                    if d["attempt"] >= from_attempt and d.get("result") != "abandoned": d["result"] = (d.get("result") or "pending") + "/abandoned"
+                counts = {}
+                for d in mine:
+                    if d["attempt"] < from_attempt: counts[d["symptom"]] = counts.get(d["symptom"], 0) + 1
+                log(f"CLOSURE RESUME series {tag} at attempt {first} from the configuration of attempt {from_attempt}; skipping regressed rules {skip}")
+            elif last.get("tag_after") is None:
+                cfg = jload(os.path.join(os.path.dirname(config_path), f"config_{last['tag_before']}.json"), cfg)
+                cfg.update({k: v[1] for k, v in last["changes"].items()})
+                for d in mine: counts[d["symptom"]] = counts.get(d["symptom"], 0) + 1
+                log(f"CLOSURE RESUME series {tag} at attempt {first} with pending decision applied: {last['rule']}")
+    for attempt in range(first, first + max_attempts):
         atag = f"{tag}-a{attempt}"
         acfg = os.path.join(os.path.dirname(config_path), f"config_{atag}.json")
         json.dump(cfg, open(acfg, "w"), indent=2)
         log(f"CLOSURE attempt {attempt}/{max_attempts} tag={atag} config={os.path.relpath(acfg, ROOT)}")
         t0 = time.time()
+        os.makedirs(os.path.join(ROOT, "runs", atag), exist_ok=True)   # librelane --force-run-dir requires an existing dir (Makefile fix queued in NEEDS_HUMAN.md)
         rc = subprocess.call(["make", "harden", f"TAG={atag}", f"CONFIG={os.path.relpath(acfg, ROOT)}", f"DESIGN={design}"], cwd=ROOT)
         run_dir = os.path.join(ROOT, "runs", atag)
         metrics, _ = final_metrics(run_dir)
@@ -292,7 +330,9 @@ def closure(config_path, design, tag, max_attempts):
                                            "design__instance__count", "design__instance__area", "design__instance__utilization", "power__total")}
         if decisions and decisions[-1].get("tag_after") is None and decisions[-1].get("series") == tag:
             decisions[-1]["after"] = snap; decisions[-1]["tag_after"] = atag; decisions[-1]["result"] = "pass" if rc == 0 else "fail"
-        best = atag if rc == 0 else (best or atag)
+        consider(atag, rc, metrics)
+        if decisions and decisions[-1].get("series") == tag and regressed(decisions[-1]):
+            skip.append({k: v[1] for k, v in decisions[-1]["changes"].items()}); log(f"CLOSURE rule regressed setup slack, will not retry: {decisions[-1]['rule']}")
         if rc == 0:
             log(f"CLOSURE PASS at attempt {attempt} ({atag}) {snap}"); break
         log(f"CLOSURE FAIL attempt {attempt} ({atag}) symptoms={symptoms} {snap}")
@@ -303,6 +343,8 @@ def closure(config_path, design, tag, max_attempts):
         for sym in PRIORITY:
             if sym in symptoms:
                 k = counts.get(sym, 0); r = rules(sym, k, cfg)
+                while r is not None and (already_applied(r[1], cfg) or r[1] in skip):
+                    k += 1; r = rules(sym, k, cfg)
                 if r is None: continue
                 counts[sym] = k + 1; applied = (sym, r); break
         if not applied:
@@ -329,7 +371,7 @@ def needs_human(text):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("ingest"); a.add_argument("--run-dir", required=True); a.add_argument("--design", default="mac_int8"); a.add_argument("--no-render", action="store_true")
-    c = sub.add_parser("closure"); c.add_argument("--config", required=True); c.add_argument("--design", default="mac_int8"); c.add_argument("--tag", required=True); c.add_argument("--max-attempts", type=int, default=4)
+    c = sub.add_parser("closure"); c.add_argument("--config", required=True); c.add_argument("--design", default="mac_int8"); c.add_argument("--tag", required=True); c.add_argument("--max-attempts", type=int, default=4); c.add_argument("--resume", action="store_true"); c.add_argument("--from-attempt", type=int, default=None)
     args = ap.parse_args()
     if args.cmd == "ingest": ingest(args.run_dir, args.design, render=not args.no_render); sys.exit(0)
-    sys.exit(closure(args.config, args.design, args.tag, args.max_attempts))
+    sys.exit(closure(args.config, args.design, args.tag, args.max_attempts, resume=args.resume, from_attempt=args.from_attempt))

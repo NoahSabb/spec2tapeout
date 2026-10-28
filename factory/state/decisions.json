@@ -1,0 +1,654 @@
+[
+  {
+    "time": "2026-10-28T08:36:34Z",
+    "series": "mac-w8",
+    "attempt": 1,
+    "tag_before": "mac-w8-a1",
+    "tag_after": "mac-w8-a2",
+    "symptom": "setup",
+    "rule": "synthesis strategy DELAY 1 (ABC delay-oriented mapping)",
+    "changes": {
+      "SYNTH_STRATEGY": [
+        "AREA 0",
+        "DELAY 1"
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -2.5192355581352204,
+      "timing__hold__ws": 0.12015261348172723,
+      "timing__setup_vio__count": 58,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 4535,
+      "design__instance__area": 22709.3,
+      "design__instance__utilization": 0.526887,
+      "power__total": 0.005043978337198496
+    },
+    "after": {
+      "timing__setup__ws": -1.0306920053614892,
+      "timing__hold__ws": 0.10409690071241903,
+      "timing__setup_vio__count": 50,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 7092,
+      "design__instance__area": 34287.9,
+      "design__instance__utilization": 0.513246,
+      "power__total": 0.003007561434060335
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:38:39Z",
+    "series": "mac-w8",
+    "attempt": 2,
+    "tag_before": "mac-w8-a2",
+    "tag_after": "mac-w8-a3",
+    "symptom": "setup",
+    "rule": "lower utilization by 10 (more room for resizer, shorter wires)",
+    "changes": {
+      "FP_CORE_UTIL": [
+        40,
+        30.0
+      ],
+      "PL_TARGET_DENSITY_PCT": [
+        50,
+        45
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -1.0306920053614892,
+      "timing__hold__ws": 0.10409690071241903,
+      "timing__setup_vio__count": 50,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 7092,
+      "design__instance__area": 34287.9,
+      "design__instance__utilization": 0.513246,
+      "power__total": 0.003007561434060335
+    },
+    "after": {
+      "timing__setup__ws": -0.8360485873577347,
+      "timing__hold__ws": 0.1130190972798536,
+      "timing__setup_vio__count": 49,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10292,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.385688,
+      "power__total": 0.0029543067794293165
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:40:44Z",
+    "series": "mac-w8",
+    "attempt": 3,
+    "tag_before": "mac-w8-a3",
+    "tag_after": "mac-w8-a4",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % (cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        10,
+        11.0
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -0.8360485873577347,
+      "timing__hold__ws": 0.1130190972798536,
+      "timing__setup_vio__count": 49,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10292,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.385688,
+      "power__total": 0.0029543067794293165
+    },
+    "after": {
+      "timing__setup__ws": -0.9052225891756138,
+      "timing__hold__ws": 0.11275281027986614,
+      "timing__setup_vio__count": 53,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10543,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.363706,
+      "power__total": 0.002542276168242097
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:42:21Z",
+    "series": "mac-w8",
+    "attempt": 4,
+    "tag_before": "mac-w8-a4",
+    "tag_after": "mac-w8-a5",
+    "symptom": "setup",
+    "rule": "synthesis strategy DELAY 4 (ORFS delay script) + CSA adders",
+    "changes": {
+      "SYNTH_STRATEGY": [
+        "DELAY 1",
+        "DELAY 4"
+      ],
+      "SYNTH_ADDER_TYPE": [
+        null,
+        "CSA"
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -0.9052225891756138,
+      "timing__hold__ws": 0.11275281027986614,
+      "timing__setup_vio__count": 53,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10543,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.363706,
+      "power__total": 0.002542276168242097
+    },
+    "after": {
+      "timing__setup__ws": -11.86947462801699,
+      "timing__hold__ws": 0.1288519327706649,
+      "timing__setup_vio__count": 87,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5367,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.420181,
+      "power__total": 0.0023071146570146084
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:46:01Z",
+    "series": "mac-w8",
+    "attempt": 5,
+    "tag_before": "mac-w8-a5",
+    "tag_after": "mac-w8-a6",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        11.0,
+        12.1
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -11.86947462801699,
+      "timing__hold__ws": 0.1288519327706649,
+      "timing__setup_vio__count": 87,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5367,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.420181,
+      "power__total": 0.0023071146570146084
+    },
+    "after": {
+      "timing__setup__ws": -10.745852511974034,
+      "timing__hold__ws": 0.1287484044706906,
+      "timing__setup_vio__count": 78,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5337,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.42254,
+      "power__total": 0.0022156424820423126
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:47:24Z",
+    "series": "mac-w8",
+    "attempt": 6,
+    "tag_before": "mac-w8-a6",
+    "tag_after": "mac-w8-a7",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        12.1,
+        13.31
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -10.745852511974034,
+      "timing__hold__ws": 0.1287484044706906,
+      "timing__setup_vio__count": 78,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5337,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.42254,
+      "power__total": 0.0022156424820423126
+    },
+    "after": {
+      "timing__setup__ws": -9.741374205232948,
+      "timing__hold__ws": 0.13165527374270292,
+      "timing__setup_vio__count": 66,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5325,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.413358,
+      "power__total": 0.001928433426655829
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:48:53Z",
+    "series": "mac-w8",
+    "attempt": 7,
+    "tag_before": "mac-w8-a7",
+    "tag_after": "mac-w8-a8",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        13.31,
+        14.64
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -9.741374205232948,
+      "timing__hold__ws": 0.13165527374270292,
+      "timing__setup_vio__count": 66,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5325,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.413358,
+      "power__total": 0.001928433426655829
+    },
+    "after": {
+      "timing__setup__ws": -9.22813407364487,
+      "timing__hold__ws": 0.12737211645928995,
+      "timing__setup_vio__count": 63,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5411,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.386221,
+      "power__total": 0.0016358179273083806
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:50:22Z",
+    "series": "mac-w8",
+    "attempt": 8,
+    "tag_before": "mac-w8-a8",
+    "tag_after": "mac-w8-a9",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        14.64,
+        16.1
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -9.22813407364487,
+      "timing__hold__ws": 0.12737211645928995,
+      "timing__setup_vio__count": 63,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5411,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.386221,
+      "power__total": 0.0016358179273083806
+    },
+    "after": {
+      "timing__setup__ws": -7.9038928750214135,
+      "timing__hold__ws": 0.12653617400925637,
+      "timing__setup_vio__count": 57,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5377,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.391659,
+      "power__total": 0.0014649300137534738
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:51:51Z",
+    "series": "mac-w8",
+    "attempt": 9,
+    "tag_before": "mac-w8-a9",
+    "tag_after": "mac-w8-a10",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        16.1,
+        17.71
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -7.9038928750214135,
+      "timing__hold__ws": 0.12653617400925637,
+      "timing__setup_vio__count": 57,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5377,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.391659,
+      "power__total": 0.0014649300137534738
+    },
+    "after": {
+      "timing__setup__ws": -6.5807769984875435,
+      "timing__hold__ws": 0.12619372570762563,
+      "timing__setup_vio__count": 51,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5389,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.389607,
+      "power__total": 0.0013178103836253285
+    },
+    "result": "fail/abandoned"
+  },
+  {
+    "time": "2026-10-28T08:53:18Z",
+    "series": "mac-w8",
+    "attempt": 10,
+    "tag_before": "mac-w8-a10",
+    "tag_after": "mac-w8-a11",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        17.71,
+        19.48
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -6.5807769984875435,
+      "timing__hold__ws": 0.12619372570762563,
+      "timing__setup_vio__count": 51,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 5389,
+      "design__instance__area": 24390.9,
+      "design__instance__utilization": 0.389607,
+      "power__total": 0.0013178103836253285
+    },
+    "after": {
+      "timing__setup__ws": -0.9052225891756138,
+      "timing__hold__ws": 0.11275281027986614,
+      "timing__setup_vio__count": 53,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10543,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.363706,
+      "power__total": 0.002542276168242097
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:56:29Z",
+    "series": "mac-w8",
+    "attempt": 11,
+    "tag_before": "mac-w8-a11",
+    "tag_after": "mac-w8-a12",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        11.0,
+        12.1
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -0.9052225891756138,
+      "timing__hold__ws": 0.11275281027986614,
+      "timing__setup_vio__count": 53,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10543,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.363706,
+      "power__total": 0.002542276168242097
+    },
+    "after": {
+      "timing__setup__ws": -1.1895977872810404,
+      "timing__hold__ws": 0.11168333240999782,
+      "timing__setup_vio__count": 47,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10649,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.354297,
+      "power__total": 0.0022152976598590612
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:57:58Z",
+    "series": "mac-w8",
+    "attempt": 12,
+    "tag_before": "mac-w8-a12",
+    "tag_after": "mac-w8-a13",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        12.1,
+        13.31
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -1.1895977872810404,
+      "timing__hold__ws": 0.11168333240999782,
+      "timing__setup_vio__count": 47,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10649,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.354297,
+      "power__total": 0.0022152976598590612
+    },
+    "after": {
+      "timing__setup__ws": -0.9036380788300559,
+      "timing__hold__ws": 0.11127954428452175,
+      "timing__setup_vio__count": 33,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10669,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.353004,
+      "power__total": 0.0020052187610417604
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T08:59:23Z",
+    "series": "mac-w8",
+    "attempt": 13,
+    "tag_before": "mac-w8-a13",
+    "tag_after": "mac-w8-a14",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        13.31,
+        14.64
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -0.9036380788300559,
+      "timing__hold__ws": 0.11127954428452175,
+      "timing__setup_vio__count": 33,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10669,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.353004,
+      "power__total": 0.0020052187610417604
+    },
+    "after": {
+      "timing__setup__ws": -0.5176019759305862,
+      "timing__hold__ws": 0.11172890706644763,
+      "timing__setup_vio__count": 8,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10640,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.352537,
+      "power__total": 0.0018236591713503003
+    },
+    "result": "fail"
+  },
+  {
+    "time": "2026-10-28T09:00:46Z",
+    "series": "mac-w8",
+    "attempt": 14,
+    "tag_before": "mac-w8-a14",
+    "tag_after": "mac-w8-a15",
+    "symptom": "setup",
+    "rule": "relax CLOCK_PERIOD by 10 % again (Appendix C step 8; cap 20 ns standalone)",
+    "changes": {
+      "CLOCK_PERIOD": [
+        14.64,
+        16.1
+      ]
+    },
+    "before": {
+      "timing__setup__ws": -0.5176019759305862,
+      "timing__hold__ws": 0.11172890706644763,
+      "timing__setup_vio__count": 8,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10640,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.352537,
+      "power__total": 0.0018236591713503003
+    },
+    "after": {
+      "timing__setup__ws": 0.5712657175665821,
+      "timing__hold__ws": 0.11170553687111831,
+      "timing__setup_vio__count": 0,
+      "timing__hold_vio__count": 0,
+      "route__drc_errors": 0,
+      "magic__drc_error__count": 0,
+      "klayout__drc_error__count": 0,
+      "design__lvs_error__count": 0,
+      "antenna__violating__pins": 0,
+      "design__instance__count": 10662,
+      "design__instance__area": 45478.6,
+      "design__instance__utilization": 0.352977,
+      "power__total": 0.0016547926934435964
+    },
+    "result": "pass"
+  }
+]

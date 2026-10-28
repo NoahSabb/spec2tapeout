@@ -79,5 +79,158 @@
     "duration_s": 0.8,
     "log": "logs/gates/sim-tt-w8.log",
     "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=tt WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "harden-mac-w8-a1": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:34:57Z",
+    "ended": "2026-10-28T08:36:34Z",
+    "duration_s": 96.8,
+    "log": "logs/gates/harden-mac-w8-a1.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a1 --force-run-dir runs/mac-w8-a1 flow/mac_int8/config_mac-w8-a1.json"
+  },
+  "harden-mac-w8-a2": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:36:34Z",
+    "ended": "2026-10-28T08:38:39Z",
+    "duration_s": 124.5,
+    "log": "logs/gates/harden-mac-w8-a2.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a2 --force-run-dir runs/mac-w8-a2 flow/mac_int8/config_mac-w8-a2.json"
+  },
+  "harden-mac-w8-a3": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:38:39Z",
+    "ended": "2026-10-28T08:40:44Z",
+    "duration_s": 125.6,
+    "log": "logs/gates/harden-mac-w8-a3.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a3 --force-run-dir runs/mac-w8-a3 flow/mac_int8/config_mac-w8-a3.json"
+  },
+  "harden-mac-w8-a4": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:40:44Z",
+    "ended": "2026-10-28T08:42:21Z",
+    "duration_s": 96.4,
+    "log": "logs/gates/harden-mac-w8-a4.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a4 --force-run-dir runs/mac-w8-a4 flow/mac_int8/config_mac-w8-a4.json"
+  },
+  "harden-mac-w8-a5": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:44:31Z",
+    "ended": "2026-10-28T08:46:01Z",
+    "duration_s": 90.1,
+    "log": "logs/gates/harden-mac-w8-a5.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a5 --force-run-dir runs/mac-w8-a5 flow/mac_int8/config_mac-w8-a5.json"
+  },
+  "harden-mac-w8-a6": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:46:01Z",
+    "ended": "2026-10-28T08:47:24Z",
+    "duration_s": 82.6,
+    "log": "logs/gates/harden-mac-w8-a6.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a6 --force-run-dir runs/mac-w8-a6 flow/mac_int8/config_mac-w8-a6.json"
+  },
+  "harden-mac-w8-a7": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:47:24Z",
+    "ended": "2026-10-28T08:48:53Z",
+    "duration_s": 88.7,
+    "log": "logs/gates/harden-mac-w8-a7.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a7 --force-run-dir runs/mac-w8-a7 flow/mac_int8/config_mac-w8-a7.json"
+  },
+  "harden-mac-w8-a8": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:48:53Z",
+    "ended": "2026-10-28T08:50:22Z",
+    "duration_s": 89.0,
+    "log": "logs/gates/harden-mac-w8-a8.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a8 --force-run-dir runs/mac-w8-a8 flow/mac_int8/config_mac-w8-a8.json"
+  },
+  "harden-mac-w8-a9": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:50:22Z",
+    "ended": "2026-10-28T08:51:51Z",
+    "duration_s": 89.0,
+    "log": "logs/gates/harden-mac-w8-a9.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a9 --force-run-dir runs/mac-w8-a9 flow/mac_int8/config_mac-w8-a9.json"
+  },
+  "harden-mac-w8-a10": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:51:51Z",
+    "ended": "2026-10-28T08:53:18Z",
+    "duration_s": 86.8,
+    "log": "logs/gates/harden-mac-w8-a10.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a10 --force-run-dir runs/mac-w8-a10 flow/mac_int8/config_mac-w8-a10.json"
+  },
+  "harden-mac-w8-a11": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:54:50Z",
+    "ended": "2026-10-28T08:56:29Z",
+    "duration_s": 98.1,
+    "log": "logs/gates/harden-mac-w8-a11.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a11 --force-run-dir runs/mac-w8-a11 flow/mac_int8/config_mac-w8-a11.json"
+  },
+  "harden-mac-w8-a12": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:56:29Z",
+    "ended": "2026-10-28T08:57:58Z",
+    "duration_s": 89.4,
+    "log": "logs/gates/harden-mac-w8-a12.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a12 --force-run-dir runs/mac-w8-a12 flow/mac_int8/config_mac-w8-a12.json"
+  },
+  "harden-mac-w8-a13": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:57:58Z",
+    "ended": "2026-10-28T08:59:23Z",
+    "duration_s": 85.3,
+    "log": "logs/gates/harden-mac-w8-a13.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a13 --force-run-dir runs/mac-w8-a13 flow/mac_int8/config_mac-w8-a13.json"
+  },
+  "harden-mac-w8-a14": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T08:59:23Z",
+    "ended": "2026-10-28T09:00:46Z",
+    "duration_s": 82.4,
+    "log": "logs/gates/harden-mac-w8-a14.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a14 --force-run-dir runs/mac-w8-a14 flow/mac_int8/config_mac-w8-a14.json"
+  },
+  "harden-mac-w8-a15": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:00:46Z",
+    "ended": "2026-10-28T09:02:11Z",
+    "duration_s": 85.5,
+    "log": "logs/gates/harden-mac-w8-a15.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag mac-w8-a15 --force-run-dir runs/mac-w8-a15 flow/mac_int8/config_mac-w8-a15.json"
+  },
+  "sim-gl-mac": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:03:05Z",
+    "ended": "2026-10-28T09:03:08Z",
+    "duration_s": 2.5,
+    "log": "logs/gates/sim-gl-mac.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/mac-w8-a15/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "render-mac-w8-a15": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:03:19Z",
+    "ended": "2026-10-28T09:03:38Z",
+    "duration_s": 19.2,
+    "log": "logs/gates/render-mac-w8-a15.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/render.py --run-dir runs/mac-w8-a15 --design mac_int8"
   }
 }

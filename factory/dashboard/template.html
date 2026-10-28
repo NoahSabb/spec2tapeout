@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>spec2tapeout factory</title>
+<style>
+  :root { --bg:#0f1115; --panel:#171a21; --line:#2a2f3a; --fg:#e6e6e6; --muted:#9aa3b2; --pass:#2ecc71; --fail:#e74c3c; --warn:#f1c40f; --run:#3498db; --pend:#4b5563; --skip:#7f8c8d; }
+  body { margin:0; font:14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); }
+  header { display:flex; flex-wrap:wrap; gap:16px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--line); background:var(--panel); position:sticky; top:0; z-index:5; }
+  header h1 { font-size:18px; margin:0; } header .meta { color:var(--muted); } header label { margin-left:auto; cursor:pointer; }
+  .badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:12px; font-weight:600; color:#000; }
+  .pass{background:var(--pass)} .fail{background:var(--fail);color:#fff} .warn{background:var(--warn)} .running{background:var(--run);color:#fff} .pending{background:var(--pend);color:#fff} .skipped{background:var(--skip);color:#fff} .unknown{background:var(--pend);color:#fff}
+  main { padding:16px 20px; display:grid; gap:16px; }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; }
+  section h2 { margin:0 0 10px; font-size:15px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .line { display:flex; overflow-x:auto; gap:6px; padding:8px 0; }
+  .station { min-width:120px; flex:0 0 auto; border:1px solid var(--line); border-radius:6px; padding:8px; cursor:pointer; background:#1d2129; position:relative; }
+  .station.active { outline:2px solid var(--run); }
+  .station .n { color:var(--muted); font-size:11px; } .station .name { font-weight:600; margin:2px 0; } .station .tool { font-size:11px; color:var(--muted); }
+  .station .dot { position:absolute; right:8px; top:8px; width:10px; height:10px; border-radius:50%; }
+  .station::after { content:"\25B8"; position:absolute; right:-9px; top:38%; color:var(--muted); } .station:last-child::after { content:""; }
+  .detail { display:grid; grid-template-columns: 1.2fr 1fr; gap:14px; } .detail img { max-width:100%; border:1px solid var(--line); border-radius:4px; background:#fff; }
+  table { border-collapse:collapse; width:100%; font-size:13px; } th, td { text-align:left; padding:4px 8px; border-bottom:1px solid var(--line); } th { color:var(--muted); font-weight:600; }
+  td.num { font-variant-numeric: tabular-nums; text-align:right; } .neg { color:var(--fail); font-weight:600; } .pos { color:var(--pass); }
+  .grid2 { display:grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap:16px; }
+  .learn { display:none; margin-top:8px; padding:8px 10px; border-left:3px solid var(--warn); background:#20232b; color:#d9dde5; }
+  body.learning .learn { display:block; }
+  .kv { display:grid; grid-template-columns: max-content 1fr; gap:2px 12px; font-size:13px; } .kv div:nth-child(odd) { color:var(--muted); }
+  .timeline li { margin-bottom:8px; } code { background:#20232b; padding:1px 4px; border-radius:3px; font-size:12px; }
+  .muted { color:var(--muted); } a { color:#8ab4f8; } .plots img { max-width:100%; }
+  @media (max-width:900px) { .detail { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>spec2tapeout factory</h1>
+  <span class="meta" id="runmeta"></span>
+  <span id="runstatus" class="badge unknown">unknown</span>
+  <label><input type="checkbox" id="learn"> learning mode (plain-English explanations)</label>
+</header>
+<main>
+  <section>
+    <h2>Factory line — click a station</h2>
+    <div class="line" id="line"></div>
+    <div class="learn">Each box is a "station" of the LibreLane Classic flow (80 steps grouped into 22). Green = every step in the station wrote its state_out.json and the run exited 0; red = a step failed or a deferred checker (timing, DRC, LVS, XOR) blamed this station; grey = not reached. The design flows left to right: text (RTL) becomes gates, gates get positions, positions get wires, wires get checked, and the result is a GDS file the foundry can print.</div>
+  </section>
+  <section id="detail"><h2>Station detail</h2><div class="muted">Select a station above.</div></section>
+  <div class="grid2">
+    <section><h2>Timing (signoff STA, per corner)</h2><div id="timing"></div>
+      <div class="learn">Setup slack is how much earlier than required the data arrived at the slow/hot/low-voltage corner (ss_100C_1v60, max RC); negative means the chip cannot run at CLOCK_PERIOD. Hold slack is how long the data stayed stable after the clock edge at the fast/cold/high-voltage corner (ff_n40C_1v95, min RC); negative means the chip is broken at any frequency. The flow subtracts 0.25 ns clock uncertainty and applies ±5 % derate before reporting these numbers. TNS adds up all negative slacks; "vio" counts violating endpoints.</div></section>
+    <section><h2>Area / utilization / power</h2><div id="area"></div>
+      <div class="learn">Instance area is the sum of standard-cell areas (um²); utilization is that area divided by the core area; a sky130 1x1 Tiny Tapeout tile is 161.00 x 111.52 um and fits roughly 1000 gates. Power is OpenSTA's vectorless estimate (internal + switching + leakage) at the nominal corner.</div></section>
+  </div>
+  <section><h2>Gate ladder</h2><div id="gates"></div></section>
+  <section><h2>Decisions timeline (closure loop)</h2><ul class="timeline" id="decisions"></ul>
+    <div class="learn">When a run fails a checker, the orchestrator applies one rule from a fixed table (synthesis strategy → utilization → clock period for setup; density → routing adjustment for congestion; resizer margins → CTS clustering for hold; repair iterations → diodes for antennas) and re-runs. Every change is recorded with the metrics before and after, so a human can audit why the final configuration looks the way it does.</div></section>
+  <section><h2>Sweep: WIDTH × CLOCK_PERIOD</h2><div id="sweep"></div><div class="plots" id="plots"></div>
+    <div class="learn">The same MAC was hardened at operand widths 2, 4 and 8 bits and several clock periods. Area should grow roughly with the square of the width (the multiplier), worst slack should get worse as the clock period shrinks, and the point where WNS crosses zero is the fastest clock the design closes at.</div></section>
+  <section><h2>NEEDS HUMAN</h2><ul id="needs"></ul></section>
+</main>
+<script id="data" type="application/json">__DATA_JSON__</script>
+<script>
+const LEARN = {
+  lint: "A spell-checker for hardware: it reads the Verilog without building anything and warns about constructs that simulate fine but synthesize badly (latches from incomplete if/case, nets driven from two places, widths that silently truncate).",
+  synth: "Synthesis translates the RTL into a netlist of sky130 standard cells. Yosys does the logic optimization and flip-flop mapping; ABC maps the remaining logic to NAND/NOR/AOI cells using the liberty timing tables, aiming for area (AREA strategies) or speed (DELAY strategies). The cell count and area here are the first real cost of the design.",
+  sta_pre: "Static timing analysis before any layout: with ideal clocks and no wires it tells you whether the clock period is hopeless (a large negative slack here will not get better after routing).",
+  floorplan: "Decide the size and shape of the chip core. Relative sizing grows the die until the cells fill FP_CORE_UTIL percent of it; absolute sizing (Tiny Tapeout) fixes the outline and utilization becomes a result.",
+  tap: "Tap cells connect the silicon wells to power and ground every 13 um so that the parasitic thyristor between n-well and substrate can never switch on (latch-up); end-caps terminate the rows cleanly.",
+  pdn: "The power grid: metal-1 rails that follow the cell rows and wider metal-4 straps every PDN_VPITCH um, joined by via stacks. Too sparse and the chip sees IR drop; too dense and signals cannot route.",
+  io: "Where the chip's pins go on the edge of the die. Tiny Tapeout dictates them from a template DEF; standalone runs let OpenROAD choose.",
+  gpl: "Global placement finds an (x,y) for every cell by treating cells as electric charges that repel where the density is too high while wires pull connected cells together, iterating until no bin is overfull (overflow < 10 %).",
+  repair: "The resizer fixes electrical rule violations: nets with too many loads or too much capacitance get buffers, slow gates get upsized. 20 % margins because wire parasitics are still estimates.",
+  dpl: "Legalization: every cell is moved to the nearest legal site in a row with no overlaps, keeping displacement small.",
+  cts: "Clock tree synthesis builds a balanced tree of clock buffers from the clock pin to every flip-flop. From here the clock is 'propagated': real arrival-time differences (skew) exist, which is why hold violations only appear after this step.",
+  rsz_cts: "With the real clock tree, the resizer repairs setup (upsizing, buffering, cloning) and then hold (inserting delay on short paths) with margins of 0.05 ns and 0.1 ns, refusing hold fixes that would break setup.",
+  grt: "Global routing assigns every net to coarse routing cells and layers. Capacity is deliberately reduced by 30 % so the detailed router has slack; leftover overflow is congestion.",
+  antenna: "During manufacturing, long metal wires connected only to a transistor gate collect plasma charge that can damage the gate oxide. The checker computes metal-to-gate area ratios and diodes are inserted to drain the charge where the ratio is too high.",
+  drt: "Detailed routing draws the actual wires and vias on the tracks, then runs search-and-repair iterations with a built-in design-rule checker until there are zero violations (or 64 iterations).",
+  postroute: "Sanity checks after routing: every pin connected, no wire longer than the PDK threshold.",
+  fill: "Fill and decoupling-capacitor cells are placed in every gap so the power rails and wells are continuous and the metal density is uniform enough for manufacturing.",
+  rcx: "Parasitic extraction: the resistance and capacitance of every real wire are computed from the layout for three interconnect corners (nominal, minimum, maximum) and written as SPEF files.",
+  sta_post: "Signoff timing: OpenSTA re-times the design at nine corners with the extracted parasitics. This is the only timing result that counts; setup is judged at the slow corner, hold at the fast corner.",
+  ir: "Static IR-drop analysis solves the resistive power grid with each cell's current to find the worst voltage droop; a few percent of 1.8 V is the usual budget.",
+  gds: "The layout database is streamed out to GDSII by two independent tools (Magic and KLayout) and the two results are XOR-compared; an empty XOR means both tools agree about every polygon.",
+  signoff: "Two design-rule-check decks (Magic and KLayout) verify manufacturing rules; Magic extracts transistors from the layout and Netgen compares that circuit with the gate netlist (LVS). Then all deferred checkers report: this is where 'tapeout ready' is decided."
+};
+const D = JSON.parse(document.getElementById('data').textContent);
+const $ = s => document.querySelector(s);
+const fmt = v => v === null || v === undefined ? '—' : (typeof v === 'number' ? (Number.isInteger(v) ? v : v.toFixed(3)) : v);
+const cls = v => (typeof v === 'number' && v < 0) ? 'neg' : ((typeof v === 'number') ? 'pos' : '');
+document.body.classList.toggle('learning', localStorage.getItem('learn') === '1');
+$('#learn').checked = localStorage.getItem('learn') === '1';
+$('#learn').onchange = e => { document.body.classList.toggle('learning', e.target.checked); localStorage.setItem('learn', e.target.checked ? '1' : '0'); };
+
+function render() {
+  $('#runmeta').textContent = `run ${D.run_tag} · ${D.design || ''} · generated ${D.generated_at || ''}` + (D.elapsed_s ? ` · elapsed ${(D.elapsed_s/3600).toFixed(2)} h` : '');
+  $('#runstatus').textContent = D.status; $('#runstatus').className = 'badge ' + D.status;
+  const line = $('#line'); line.innerHTML = '';
+  (D.stations || []).forEach((s, i) => {
+    const el = document.createElement('div'); el.className = 'station'; el.dataset.id = s.id;
+    el.innerHTML = `<div class="n">${i+1}</div><div class="name">${s.name}</div><div class="tool">${s.tool}</div><div class="dot ${s.status}" style="background:var(--${{pass:'pass',fail:'fail',warn:'warn',running:'run',pending:'pend',skipped:'skip'}[s.status]||'pend'})"></div>`;
+    el.onclick = () => showStation(s, el); line.appendChild(el);
+  });
+  const m = D.metrics || {}, C = D.corners || {};
+  const corners = Object.keys(C).sort();
+  let t = `<table><tr><th>corner</th><th>setup ws</th><th>setup tns</th><th>setup vio</th><th>hold ws</th><th>hold tns</th><th>hold vio</th></tr>`;
+  corners.forEach(c => { const r = C[c]; t += `<tr><td>${c}</td><td class="num ${cls(r.timing__setup__ws)}">${fmt(r.timing__setup__ws)}</td><td class="num">${fmt(r.timing__setup__tns)}</td><td class="num">${fmt(r.timing__setup_vio__count)}</td><td class="num ${cls(r.timing__hold__ws)}">${fmt(r.timing__hold__ws)}</td><td class="num">${fmt(r.timing__hold__tns)}</td><td class="num">${fmt(r.timing__hold_vio__count)}</td></tr>`; });
+  t += `<tr><th>overall</th><td class="num ${cls(m.timing__setup__ws)}">${fmt(m.timing__setup__ws)}</td><td class="num">${fmt(m.timing__setup__tns)}</td><td class="num">${fmt(m.timing__setup_vio__count)}</td><td class="num ${cls(m.timing__hold__ws)}">${fmt(m.timing__hold__ws)}</td><td class="num">${fmt(m.timing__hold__tns)}</td><td class="num">${fmt(m.timing__hold_vio__count)}</td></tr></table>`;
+  t += `<div class="kv" style="margin-top:8px"><div>max slew / cap / fanout violations</div><div>${fmt(m.design__max_slew_violation__count)} / ${fmt(m.design__max_cap_violation__count)} / ${fmt(m.design__max_fanout_violation__count)}</div><div>worst skew setup / hold</div><div>${fmt(m.clock__skew__worst_setup)} / ${fmt(m.clock__skew__worst_hold)} ns</div><div>unannotated nets (filtered)</div><div>${fmt(m.timing__unannotated_net_filtered__count)}</div></div>`;
+  $('#timing').innerHTML = t;
+  $('#area').innerHTML = `<div class="kv"><div>instances</div><div>${fmt(m.design__instance__count)}</div><div>instance area</div><div>${fmt(m.design__instance__area)} um²</div><div>utilization</div><div>${fmt(m.design__instance__utilization)}</div><div>die bbox</div><div>${fmt(m.design__die__bbox)}</div><div>core bbox</div><div>${fmt(m.design__core__bbox)}</div><div>power total / internal / switching / leakage</div><div>${fmt(m.power__total)} / ${fmt(m.power__internal__total)} / ${fmt(m.power__switching__total)} / ${fmt(m.power__leakage__total)} W</div><div>IR drop worst / avg</div><div>${fmt(m.ir__drop__worst)} / ${fmt(m.ir__drop__avg)}</div><div>route DRC / Magic DRC / KLayout DRC</div><div>${fmt(m.route__drc_errors)} / ${fmt(m.magic__drc_error__count)} / ${fmt(m.klayout__drc_error__count)}</div><div>LVS errors / XOR diff / antenna pins</div><div>${fmt(m.design__lvs_error__count)} / ${fmt(m.design__xor_difference__count)} / ${fmt(m.antenna__violating__pins)}</div><div>GDS</div><div>${D.gds || '—'} (${D.gds_bytes || 0} bytes)</div></div>`;
+  let g = `<table><tr><th>gate</th><th>status</th><th>exit</th><th>duration</th><th>ended</th><th>log</th></tr>`;
+  Object.entries(D.gates || {}).sort((a,b) => (a[1].ended||'').localeCompare(b[1].ended||'')).forEach(([k, v]) => { g += `<tr><td>${k}</td><td><span class="badge ${v.status}">${v.status}</span></td><td class="num">${v.exit_code}</td><td class="num">${v.duration_s}s</td><td>${v.ended}</td><td><code>${v.log}</code></td></tr>`; });
+  $('#gates').innerHTML = g + '</table>';
+  const dl = $('#decisions'); dl.innerHTML = (D.decisions || []).length ? '' : '<li class="muted">No closure decisions were needed.</li>';
+  (D.decisions || []).forEach(d => { const li = document.createElement('li'); li.innerHTML = `<b>${d.time}</b> attempt ${d.attempt} · symptom <code>${d.symptom}</code> · ${d.rule}<br>changes: <code>${JSON.stringify(d.changes)}</code><br>before: <code>${JSON.stringify(d.before)}</code><br>after: <code>${JSON.stringify(d.after)}</code> → <span class="badge ${d.result||'pending'}">${d.result||'pending'}</span>`; dl.appendChild(li); });
+  if ((D.sweep || []).length) {
+    const cols = Object.keys(D.sweep[0]); let s = '<table><tr>' + cols.map(c => `<th>${c}</th>`).join('') + '</tr>';
+    D.sweep.forEach(r => { s += '<tr>' + cols.map(c => `<td class="num ${c.includes('ws') ? cls(parseFloat(r[c])) : ''}">${r[c]}</td>`).join('') + '</tr>'; });
+    $('#sweep').innerHTML = s + '</table>';
+  } else $('#sweep').innerHTML = '<div class="muted">No sweep yet (make sweep).</div>';
+  $('#plots').innerHTML = Object.entries(D.sweep_plots || {}).map(([k, v]) => `<img src="${v}" alt="sweep ${k}">`).join('');
+  const nl = $('#needs'); nl.innerHTML = (D.needs_human || []).length ? '' : '<li class="muted">Nothing queued.</li>';
+  (D.needs_human || []).forEach(x => { const li = document.createElement('li'); li.textContent = x.replace(/^- /, ''); nl.appendChild(li); });
+  const first = (D.stations || []).find(s => s.status === 'fail') || (D.stations || []).slice(-1)[0];
+  if (first) showStation(first, [...document.querySelectorAll('.station')].find(e => e.dataset.id === first.id));
+}
+function showStation(s, el) {
+  document.querySelectorAll('.station').forEach(e => e.classList.remove('active')); if (el) el.classList.add('active');
+  const steps = (s.steps || []).map(e => `<tr><td>${e.n}</td><td>${e.slug}</td><td><span class="badge ${e.ok ? 'pass' : 'fail'}">${e.ok ? 'ok' : 'no state_out'}</span></td><td>${e.started || ''}</td><td>${e.ended || ''}</td><td>${e.log_url ? `<a href="${e.log_url}" target="_blank">log</a>` : (e.log || '')}</td></tr>`).join('');
+  const mets = Object.entries(s.metrics || {}).map(([k, v]) => `<div>${k}</div><div class="${cls(v)}">${fmt(v)}</div>`).join('');
+  $('#detail').innerHTML = `<h2>Station detail — ${s.name} <span class="badge ${s.status}">${s.status}</span></h2>
+    <div class="detail"><div>
+      <p>${s.explain}</p>
+      <div class="kv"><div>tool</div><div>${s.tool}</div><div>inputs</div><div>${(s.inputs||[]).join(', ')}</div><div>outputs</div><div>${(s.outputs||[]).join(', ')}</div><div>duration</div><div>${(s.duration_s||0).toFixed(1)} s</div><div>run dir</div><div><code>${s.dir || '—'}</code></div></div>
+      <div class="learn">${LEARN[s.id] || ''}</div>
+      <h3 style="font-size:13px;color:var(--muted)">key metrics</h3><div class="kv">${mets || '<div class="muted">none</div>'}</div>
+      <h3 style="font-size:13px;color:var(--muted)">steps</h3><table><tr><th>#</th><th>step</th><th>state</th><th>started</th><th>ended</th><th>log</th></tr>${steps}</table>
+    </div><div>${s.image_url ? `<img src="${s.image_url}?t=${Date.now()}" alt="layout at ${s.name}">` : '<div class="muted">no layout image for this station</div>'}</div></div>`;
+}
+render();
+setInterval(() => { fetch('pipeline.json?t=' + Date.now()).then(r => r.ok ? r.json() : null).then(j => { if (j && j.generated_at !== D.generated_at) { Object.assign(D, j); render(); } }).catch(() => {}); }, 15000);
+</script>
+</body>
+</html>

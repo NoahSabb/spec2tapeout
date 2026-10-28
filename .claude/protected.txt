@@ -1,2 +1,4 @@
 .claude/
 Makefile
+ref/
+tests/golden/

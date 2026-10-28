@@ -1,0 +1,5 @@
+warning: Using 'builtins.derivation' to create a derivation named 'devshell-env.bash' that references the store path '/nix/store/sizirny50f893gx0gbivbqyys4fxghnq-source' without a proper context. The resulting derivation will not have a correct store reference, so this is unreliable and may stop working in the future.
+Classic - Stage 80 - Report Manufacturability ━━━━━━━━━━━━━━━━━━━━ 80/80 0:00:45
+
+nix-shell ~/librelane/shell.nix --run   52.23s user 4.38s system 109% cpu 51.862 total
+exit 0

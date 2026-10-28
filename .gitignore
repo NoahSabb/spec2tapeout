@@ -1,18 +1,23 @@
-# build / flow outputs
 runs/
+.venv/
+.venv-tt/
+tt_repo/
 *.vcd
 *.fst
-sim_build/
-results.xml
-__pycache__/
-*.pyc
-
-# local environment
-.venv/
 pdk/
 .ciel/
-
-# editors / OS
+__pycache__/
+*.pyc
+tests/sim_build/
+tests/results.xml
+sim_build/
+results.xml
+flow/mac_int8/src/
+flow/sweep/*/runs/
+flow/sweep/*/src/
+factory/dashboard/site/img/
+factory/dashboard/site/logs/
+logs/gates/
 .DS_Store
 .vscode/
 .idea/

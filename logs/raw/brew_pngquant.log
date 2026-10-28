@@ -1,0 +1,96 @@
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Downloading https://ghcr.io/v2/homebrew/core/portable-ruby/blobs/sha256:43ff285a82f48c84a06d0676a3800815a19d290d32e44182ddd7a6e95478e18e
+#=#=#                                                                          ##O#-#                                                                         ######                                                                     9.2%###################                                                       27.5%###############################                                           44.1%##############################################                            65.0%#############################################################             85.0%######################################################################## 100.0%
+==> Pouring portable-ruby-4.0.9.arm64_big_sur.bottle.tar.gz
+==> Auto-updated Homebrew!
+Updated 3 taps (supabase/tap, homebrew/core and homebrew/cask).
+==> New Formulae
+annotsv: Annotation and ranking of structural variations
+ascelerate: Command-line tool for the App Store Connect API
+buildkite: Work with Buildkite from the command-line
+cellpose: Generalist algorithm for cell and nucleus segmentation
+dep-scan: Security and risk audit tool for project dependencies and container images
+erpc: Fault-tolerant RPC proxy with re-org-aware permanent caching
+filmcraft-cli: Headless FilmCraft CLI and MCP server to edit, render and export video projects
+gitea-cli: Official command-line tool for Gitea
+gitea-importer: CLI to migrate repositories from GitHub, GitLab and Gitea into Gitea
+icu4c@79: C/C++ and Java libraries for Unicode and globalization
+kontext: Identity, credentials, and governance for AI agents
+ng-log: C++ library for application-level logging
+openssh-sk-provider: Standalone FIDO2 SecurityKeyProvider (sk-libfido2) for the system OpenSSH
+slivar: Filter and annotate genetic variants with expressions, for trios and cohorts
+spidermonkey@140: JavaScript-C Engine
+worldmonitor: Command-line client for the World Monitor global intelligence API
+xfr: Modern network bandwidth testing with TUI
+zvec-grep: Agent-friendly hybrid workspace search across code and non-code content
+==> New Casks
+airbuild: AI agents that build iOS apps and handle App Store review
+clamshell: Keep the computer awake with the lid closed and the built-in display dark
+diri: Terminal workspace for running coding agents in parallel
+font-agrave-pro
+font-nordwand-mono
+kero: Terminal app optimised for agents
+keyboop: Keyboard layout switcher with local voice dictation
+magpie: Model gateway for AI coding agents
+nvalt: Note taking app, fork of Notational Velocity
+omniwm@canary: Tiling window manager
+peel: App uninstaller and disk space cleaner
+pen: Agentic design canvas
+prusaslicer@preview: G-code generator for 3D printers (RepRap, Makerbot, Ultimaker etc.)
+sprites: Command-line interface for Fly.io Sprites
+wblock: Ad blocker for Safari
+writer: Local-first Markdown editor
+
+You have 53 outdated formulae and 4 outdated casks installed.
+
+Warning: The following taps are not trusted:
+  supabase/tap
+
+Homebrew is currently ignoring formulae, casks and commands
+from these taps because tap trust is required.
+Untap them with:
+  brew untap supabase/tap
+Trust specific formulae, casks and commands with:
+  brew trust --formula <user>/<tap>/<formula>
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust supabase/tap
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+==> Downloading bottle manifests
+✔︎ Bottle Manifest pngquant (3.0.3)
+==> Would install 1 formula:
+pngquant 3.0.3
+==> Would upgrade 3 dependencies for pngquant:
+libpng       1.6.58 -> 1.6.59
+xz           5.8.3  -> 5.8.4
+little-cms2  2.19   -> 2.19.1
+==> Fetching downloads for: pngquant
+✔︎ Bottle Manifest libpng (1.6.59)
+✔︎ Bottle Manifest xz (5.8.4)
+✔︎ Bottle Manifest little-cms2 (2.19.1)
+✔︎ Bottle little-cms2 (2.19.1)
+✔︎ Bottle pngquant (3.0.3)
+✔︎ Bottle xz (5.8.4)
+✔︎ Bottle libpng (1.6.59)
+==> Pouring pngquant--3.0.3.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/pngquant/3.0.3: 9 files, 695.3KB
+==> `brew cleanup` has not been run in the last 30 days, running now...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/kubernetes-cli--1.36.1... (18.2MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/kubernetes-cli_bottle_manifest--1.36.1... (7.9KB)
+Removing: /opt/homebrew/Cellar/readline/8.3.3... (56 files, 2.7MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/Cask/mitmproxy--12.2.3.tar.gz... (54.2MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/portable-ruby-4.0.7.arm64_big_sur.bottle.tar.gz... (12.7MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/portable-ruby-4.0.7_1.arm64_big_sur.bottle.tar.gz... (12.7MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/bootsnap/a209b610b2cbd8d0fd2b4c65d15e3a103ac552cf26545c5bf094dd74895b899f... (1,119 files, 10.5MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/bootsnap/40320cc6be894e2f938e6d11101b161724eb615a6633777f610bdb31ea07df09... (1,118 files, 10.4MB)
+Removing: /Users/noahsabbavarapu/Library/Caches/Homebrew/bootsnap/d643bfa061b34d2638ecbdbc8018f88ea8423f686460396aa2c28f155589680f... (1,130 files, 11.4MB)
+Removing: /opt/homebrew/var/homebrew/tmp/.cellar/little-cms2... (22 files, 1.4MB)
+Removing: /opt/homebrew/var/homebrew/tmp/.cellar/libpng... (27 files, 1.4MB)
+Removing: /opt/homebrew/var/homebrew/tmp/.cellar/xz... (95 files, 2.7MB)

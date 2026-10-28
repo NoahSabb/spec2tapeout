@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read", "Glob", "Grep", "Edit", "Write",
+      "Bash(make *)", "Bash(make)",
+      "Bash(librelane *)", "Bash(nix-shell *)", "Bash(nix *)",
+      "Bash(python *)", "Bash(python3 *)", "Bash(.venv/bin/python *)", "Bash(.venv/bin/pip *)", "Bash(.venv-tt/bin/python *)", "Bash(.venv-tt/bin/pip *)",
+      "Bash(pip *)", "Bash(pip3 *)",
+      "Bash(git *)", "Bash(brew *)", "Bash(ciel *)", "Bash(.venv/bin/ciel *)", "Bash(gh *)",
+      "Bash(verilator *)", "Bash(iverilog *)", "Bash(vvp *)", "Bash(yosys *)", "Bash(klayout *)", "Bash(surfer *)",
+      "Bash(docker *)", "Bash(caffeinate *)",
+      "Bash(ls *)", "Bash(cat *)", "Bash(head *)", "Bash(tail *)", "Bash(grep *)", "Bash(find *)", "Bash(wc *)",
+      "Bash(mkdir *)", "Bash(cp *)", "Bash(mv *)", "Bash(chmod *)", "Bash(touch *)", "Bash(date *)", "Bash(date)",
+      "Bash(echo *)", "Bash(printf *)", "Bash(tee *)", "Bash(xattr *)", "Bash(curl *)", "Bash(tar *)",
+      "Bash(rsvg-convert *)", "Bash(jq *)", "Bash(sed *)", "Bash(awk *)", "Bash(sort *)", "Bash(uniq *)",
+      "Bash(diff *)", "Bash(which *)", "Bash(env *)", "Bash(env)", "Bash(export *)", "Bash(cd *)", "Bash(test *)",
+      "Bash(true)", "Bash(sleep *)", "Bash(kill *)", "Bash(pgrep *)", "Bash(ps *)", "Bash(df *)", "Bash(du *)",
+      "Bash(source *)", "Bash(bash *)", "Bash(sh *)", "Bash(./tt/tt_tool.py *)", "Bash(tt/tt_tool.py *)",
+      "Bash(open_pdks *)", "Bash(openroad *)", "Bash(sta *)", "Bash(magic *)", "Bash(netgen *)"
+    ],
+    "deny": [
+      "Edit(./tests/golden/**)", "Write(./tests/golden/**)",
+      "Edit(./ref/**)", "Write(./ref/**)",
+      "Edit(./.claude/**)", "Write(./.claude/**)",
+      "Read(./.env)", "Read(./.env.*)",
+      "Bash(rm -rf *)", "Bash(rm -fr *)", "Bash(rm -r *)", "Bash(rm -Rf *)",
+      "Bash(sudo *)",
+      "Bash(git push --force *)", "Bash(git push -f *)", "Bash(git reset --hard *)", "Bash(git clean *)",
+      "Bash(claude *)",
+      "Bash(shutdown *)", "Bash(reboot *)", "Bash(diskutil *)", "Bash(launchctl *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          { "type": "command", "command": "/usr/bin/python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/guard.py\"", "timeout": 20 }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          { "type": "command", "command": "/usr/bin/python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/stop_gate.py\"", "timeout": 20 }
+        ]
+      }
+    ]
+  }
+}

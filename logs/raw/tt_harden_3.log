@@ -1,0 +1,55 @@
+warning: Using 'builtins.derivation' to create a derivation named 'devshell-env.bash' that references the store path '/nix/store/sizirny50f893gx0gbivbqyys4fxghnq-source' without a proper context. The resulting derivation will not have a correct store reference, so this is unreliable and may stop working in the future.
+2026-10-28 02:21:15,868 - project    - INFO     - creating include file
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/__main__.py", line 484, in <module>
+    cli()
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/flows/cli.py", line 560, in pdk_resolve_wrapper
+    return f(*args, pdk_root=pdk_root, pdk=pdk, scl=scl, pad=pad, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/click/decorators.py", line 34, in new_func
+    return f(get_current_context(), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/__main__.py", line 479, in cli
+    run(ctx, **run_kwargs)
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/__main__.py", line 148, in run
+    flow = TargetFlow(config_files, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/flows/sequential.py", line 112, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/flows/flow.py", line 365, in __init__
+    config, design_dir = Config.load(
+                         ^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/config/config.py", line 584, in load
+    config_obj = Self.__load_dict(
+                 ^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/config/config.py", line 702, in __load_dict
+    mutable, pdkpath, scl, pad = Self.__get_pdk_config(
+                                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/config/config.py", line 942, in __get_pdk_config
+    frozen, pdkpath, scl, pad = Config.__get_pdk_raw(pdk_root, pdk, scl, pad)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/config/config.py", line 873, in __get_pdk_raw
+    pdk_env = TclUtils._eval_env(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv-tt/lib/python3.11/site-packages/librelane/common/tcl.py", line 61, in _eval_env
+    import tkinter
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/tkinter/__init__.py", line 38, in <module>
+    import _tkinter # If this fails your Python may not be configured for Tk
+    ^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named '_tkinter'
+2026-10-28 02:21:16,941 - project    - ERROR    - harden failed
+exit 1

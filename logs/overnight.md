@@ -141,3 +141,22 @@
 2026-10-28T09:15:54Z INGEST mac-w8-a15: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
 2026-10-28T09:15:54Z INGEST mac-w8-a15: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
 2026-10-28T09:16:13Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
+2026-10-28T09:16:14Z PHASE 6 END
+2026-10-28T09:16:14Z PHASE 7 START
+2026-10-28T09:16:52Z PHASE 7: make tt-harden recipe would resolve 'python' to .venv (LibreLane 3.0.16); running the same gate via factory/gate.py with .venv-tt (LibreLane 3.0.14, image ghcr.io/librelane/librelane:3.0.14) first on PATH for CI parity (Makefile is protected; fix noted in NEEDS_HUMAN.md)
+2026-10-28T09:18:13Z GATE tt-harden FAIL exit=1 log=logs/gates/tt-harden.log
+2026-10-28T09:18:34Z PHASE 7 FAIL tt-harden attempt 1: Docker Desktop VM died at Yosys.Synthesis ('error waiting for container: unexpected EOF', Phase 0 failure F4). Hypothesis 1: docker desktop restart + retry
+2026-10-28T09:20:22Z GATE tt-harden FAIL exit=1 log=logs/gates/tt-harden.log
+2026-10-28T09:21:12Z PHASE 7 FAIL tt-harden attempt 2: Docker Desktop VM died again at OpenROAD.Floorplan (unexpected EOF). Floorplan log also showed 'Effective utilization: 1.152' on a 1x2 tile -> tiles set to 2x2 per plan 5.2 decision rule. Hypothesis 2: run tt_tool.py --harden --no-docker inside nix-shell (pip LibreLane 3.0.14 flow logic from .venv-tt driving the Nix tool binaries)
+2026-10-28T09:21:16Z GATE tt-harden FAIL exit=1 log=logs/gates/tt-harden.log
+2026-10-28T09:22:13Z PHASE 7 FAIL tt-harden attempt 3: pip LibreLane 3.0.14 needs tkinter (ModuleNotFoundError _tkinter; Homebrew python@3.11 lacks Tk). Hypothesis 3: brew install python-tk@3.11 and retry nix no-docker
+2026-10-28T09:24:33Z GATE tt-harden PASS exit=0 log=logs/gates/tt-harden.log
+2026-10-28T09:24:53Z GATE tt-test-gl PASS exit=0 log=logs/gates/tt-test-gl.log
+2026-10-28T09:27:18Z GATE precheck FAIL exit=1 log=logs/gates/precheck.log
+2026-10-28T09:27:43Z PHASE 7 precheck attempt 1: 14/15 checks pass; Verilog syntax check failed only because yowasp-yosys (.venv-tt) is not on PATH inside tt/precheck's nix-shell; retrying with .venv-tt/bin appended to PATH
+2026-10-28T09:27:45Z GATE precheck FAIL exit=1 log=logs/gates/precheck.log
+2026-10-28T09:28:23Z GATE precheck FAIL exit=1 log=logs/gates/precheck.log
+2026-10-28T09:29:46Z GATE precheck FAIL exit=1 log=logs/gates/precheck.log
+2026-10-28T09:30:14Z PHASE 7 precheck attempts 2-4: PDK_ROOT unset in my direct gate call; the precheck nix-shell has no klayout binary on macOS (nixpkgs ships only klayout.app) so tools/bin/klayout (0.30.12) is used; YOWASP_MOUNT needs an absolute --gds path. Attempt 5 with all three fixed
+2026-10-28T09:30:59Z GATE precheck PASS exit=0 log=logs/gates/precheck.log
+2026-10-28T09:31:24Z PHASE 7: tt_repo committed locally (not pushed: repo creation denied by the permission classifier, see NEEDS_HUMAN.md); GitHub Actions run cannot be recorded

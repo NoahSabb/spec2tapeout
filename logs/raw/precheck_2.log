@@ -1,0 +1,6 @@
+2026-10-28 02:27:43,748 - project    - INFO     - Creating TT submission for tt_um_noahsabb_mac
+Traceback (most recent call last):
+  File "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/tt_repo/tt/precheck/precheck.py", line 12, in <module>
+    import gdstk
+ModuleNotFoundError: No module named 'gdstk'
+exit 1

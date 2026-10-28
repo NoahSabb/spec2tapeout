@@ -340,5 +340,32 @@
     "duration_s": 641.3,
     "log": "logs/gates/sweep.log",
     "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/sweep.py --widths 2,4,8 --periods 5,10,20"
+  },
+  "tt-harden": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:22:13Z",
+    "ended": "2026-10-28T09:24:33Z",
+    "duration_s": 140.2,
+    "log": "logs/gates/tt-harden.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run cd tt_repo && export PATH=\"$PWD/../.venv-tt/bin:$PATH\" PDK_ROOT=\"$PWD/../pdk\" PDK=sky130A && python tt/tt_tool.py --create-user-config && python tt/tt_tool.py --harden --no-docker && python tt/tt_tool.py --print-warnings && python tt/tt_tool.py --print-stats && python tt/tt_tool.py --print-cell-category"
+  },
+  "tt-test-gl": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:24:47Z",
+    "ended": "2026-10-28T09:24:53Z",
+    "duration_s": 6.3,
+    "log": "logs/gates/tt-test-gl.log",
+    "cmd": "bash -c cd tt_repo && cp runs/wokwi/final/pnl/tt_um_noahsabb_mac.pnl.v test/gate_level_netlist.v && cd test && make -B GATES=yes && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "precheck": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:30:14Z",
+    "ended": "2026-10-28T09:30:59Z",
+    "duration_s": 44.9,
+    "log": "logs/gates/precheck.log",
+    "cmd": "bash -c cd tt_repo && export ROOT=\"$(cd .. && pwd)\" && export PATH=\"$ROOT/.venv-tt/bin:$ROOT/tools/bin:$PATH\" PDK_ROOT=\"$ROOT/pdk\" PDK=sky130A && python tt/tt_tool.py --create-tt-submission && cd tt/precheck && nix-shell --run \"python precheck.py --gds $ROOT/tt_repo/tt_submission/tt_um_noahsabb_mac.gds --tech sky130A\""
   }
 }

@@ -1,0 +1,45 @@
+┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━┓
+┃                      ┃ Hold     ┃ Reg to   ┃          ┃          ┃ of which  ┃ Setup    ┃           ┃          ┃           ┃ of which ┃           ┃          ┃
+┃                      ┃ Worst    ┃ Reg      ┃          ┃ Hold Vio ┃ reg to    ┃ Worst    ┃ Reg to    ┃ Setup    ┃ Setup Vio ┃ reg to   ┃ Max Cap   ┃ Max Slew ┃
+┃ Corner/Group         ┃ Slack    ┃ Paths    ┃ Hold TNS ┃ Count    ┃ reg       ┃ Slack    ┃ Reg Paths ┃ TNS      ┃ Count     ┃ reg      ┃ Violatio… ┃ Violati… ┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━┩
+│ Overall              │ 0.1181   │ 0.1181   │ 0.0000   │ 0        │ 0         │ -1.6663  │ -1.6663   │ -12.8509 │ 36        │ 36       │ 0         │ 1234     │
+│ nom_tt_025C_1v80     │ 0.3504   │ 0.3504   │ 0.0000   │ 0        │ 0         │ 8.9943   │ 8.9943    │ 0.0000   │ 0         │ 0        │ 0         │ 11       │
+│ nom_ss_100C_1v60     │ 0.9830   │ 0.9830   │ 0.0000   │ 0        │ 0         │ -1.3783  │ -1.3783   │ -8.2866  │ 11        │ 11       │ 0         │ 1064     │
+│ nom_ff_n40C_1v95     │ 0.1206   │ 0.1206   │ 0.0000   │ 0        │ 0         │ 12.4092  │ 12.8962   │ 0.0000   │ 0         │ 0        │ 0         │ 0        │
+│ min_tt_025C_1v80     │ 0.3451   │ 0.3451   │ 0.0000   │ 0        │ 0         │ 9.2099   │ 9.2099    │ 0.0000   │ 0         │ 0        │ 0         │ 0        │
+│ min_ss_100C_1v60     │ 0.9736   │ 0.9736   │ 0.0000   │ 0        │ 0         │ -1.0864  │ -1.0864   │ -5.1775  │ 9         │ 9        │ 0         │ 931      │
+│ min_ff_n40C_1v95     │ 0.1181   │ 0.1181   │ 0.0000   │ 0        │ 0         │ 12.5001  │ 13.0359   │ 0.0000   │ 0         │ 0        │ 0         │ 0        │
+│ max_tt_025C_1v80     │ 0.3550   │ 0.3550   │ 0.0000   │ 0        │ 0         │ 8.7783   │ 8.7783    │ 0.0000   │ 0         │ 0        │ 0         │ 17       │
+│ max_ss_100C_1v60     │ 0.9913   │ 0.9913   │ 0.0000   │ 0        │ 0         │ -1.6663  │ -1.6663   │ -12.8509 │ 16        │ 16       │ 0         │ 1234     │
+│ max_ff_n40C_1v95     │ 0.1228   │ 0.1228   │ 0.0000   │ 0        │ 0         │ 12.2944  │ 12.7516   │ 0.0000   │ 0         │ 0        │ 0         │ 0        │
+└──────────────────────┴──────────┴──────────┴──────────┴──────────┴───────────┴──────────┴───────────┴──────────┴───────────┴──────────┴───────────┴──────────┘
+
+timing__setup__ws                                -1.6663364493223698
+timing__setup__tns                               -12.850908256828788
+timing__setup_vio__count                         36
+timing__hold__ws                                 0.1180771069896424
+timing__hold__tns                                0
+timing__hold_vio__count                          0
+design__max_slew_violation__count                1234
+design__max_cap_violation__count                 0
+design__max_fanout_violation__count              1
+clock__skew__worst_setup                         0.28282216258350684
+clock__skew__worst_hold                          -0.34058865025631163
+timing__unannotated_net_filtered__count          0
+design__instance__count                          13552
+design__instance__area                           72564.6
+design__instance__utilization                    0.621767
+route__drc_errors                                0
+antenna__violating__pins                         0
+magic__drc_error__count                          0
+klayout__drc_error__count                        None
+design__xor_difference__count                    None
+design__lvs_error__count                         0
+power__total                                     0.0017533402424305677
+ir__drop__worst                                  5.84e-05
+
+per-corner setup/hold worst slack:
+  max_ss_100C_1v60     setup_ws=-1.6663364493223698  hold_ws=0.9913492529697634
+  nom_tt_025C_1v80     setup_ws=8.994321098046129  hold_ws=0.35044057536643747
+  min_ff_n40C_1v95     setup_ws=12.500083988374188  hold_ws=0.1180771069896424

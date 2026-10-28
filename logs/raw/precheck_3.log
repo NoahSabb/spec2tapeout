@@ -1,0 +1,5 @@
+2026-10-28 02:28:20,713 - project    - INFO     - Creating TT submission for tt_um_noahsabb_mac
+/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/tt_repo/../.venv-tt/bin/python
+/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/tt_repo/../.venv-tt/bin/yowasp-yosys
+ERROR:root:PDK_ROOT environment variable not set
+exit 1

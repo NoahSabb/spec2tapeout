@@ -236,10 +236,109 @@
   "dashboard": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T09:04:16Z",
-    "ended": "2026-10-28T09:04:16Z",
-    "duration_s": 0.0,
+    "started": "2026-10-28T09:16:13Z",
+    "ended": "2026-10-28T09:16:13Z",
+    "duration_s": 0.1,
     "log": "logs/gates/dashboard.log",
     "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"
+  },
+  "harden-sweep-w2-p5": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T09:05:02Z",
+    "ended": "2026-10-28T09:05:48Z",
+    "duration_s": 45.8,
+    "log": "logs/gates/harden-sweep-w2-p5.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w2-p5 --force-run-dir runs/sweep-w2-p5 flow/sweep/sweep-w2-p5/config.json"
+  },
+  "harden-sweep-w2-p10": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:05:48Z",
+    "ended": "2026-10-28T09:06:28Z",
+    "duration_s": 40.5,
+    "log": "logs/gates/harden-sweep-w2-p10.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w2-p10 --force-run-dir runs/sweep-w2-p10 flow/sweep/sweep-w2-p10/config.json"
+  },
+  "harden-sweep-w2-p20": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:06:47Z",
+    "ended": "2026-10-28T09:07:27Z",
+    "duration_s": 40.4,
+    "log": "logs/gates/harden-sweep-w2-p20.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w2-p20 --force-run-dir runs/sweep-w2-p20 flow/sweep/sweep-w2-p20/config.json"
+  },
+  "tt-test": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:07:43Z",
+    "ended": "2026-10-28T09:07:44Z",
+    "duration_s": 1.0,
+    "log": "logs/gates/tt-test.log",
+    "cmd": "bash -c cd tt_repo/test && make -B && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "harden-sweep-w4-p5": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T09:07:45Z",
+    "ended": "2026-10-28T09:08:46Z",
+    "duration_s": 60.9,
+    "log": "logs/gates/harden-sweep-w4-p5.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w4-p5 --force-run-dir runs/sweep-w4-p5 flow/sweep/sweep-w4-p5/config.json"
+  },
+  "harden-sweep-w4-p10": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T09:08:46Z",
+    "ended": "2026-10-28T09:09:43Z",
+    "duration_s": 56.7,
+    "log": "logs/gates/harden-sweep-w4-p10.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w4-p10 --force-run-dir runs/sweep-w4-p10 flow/sweep/sweep-w4-p10/config.json"
+  },
+  "harden-sweep-w4-p20": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:09:43Z",
+    "ended": "2026-10-28T09:10:31Z",
+    "duration_s": 48.0,
+    "log": "logs/gates/harden-sweep-w4-p20.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w4-p20 --force-run-dir runs/sweep-w4-p20 flow/sweep/sweep-w4-p20/config.json"
+  },
+  "harden-sweep-w8-p5": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T09:10:50Z",
+    "ended": "2026-10-28T09:12:46Z",
+    "duration_s": 115.8,
+    "log": "logs/gates/harden-sweep-w8-p5.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w8-p5 --force-run-dir runs/sweep-w8-p5 flow/sweep/sweep-w8-p5/config.json"
+  },
+  "harden-sweep-w8-p10": {
+    "status": "fail",
+    "exit_code": 2,
+    "started": "2026-10-28T09:12:46Z",
+    "ended": "2026-10-28T09:14:23Z",
+    "duration_s": 97.7,
+    "log": "logs/gates/harden-sweep-w8-p10.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w8-p10 --force-run-dir runs/sweep-w8-p10 flow/sweep/sweep-w8-p10/config.json"
+  },
+  "harden-sweep-w8-p20": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:14:23Z",
+    "ended": "2026-10-28T09:15:23Z",
+    "duration_s": 60.0,
+    "log": "logs/gates/harden-sweep-w8-p20.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag sweep-w8-p20 --force-run-dir runs/sweep-w8-p20 flow/sweep/sweep-w8-p20/config.json"
+  },
+  "sweep": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:05:02Z",
+    "ended": "2026-10-28T09:15:43Z",
+    "duration_s": 641.3,
+    "log": "logs/gates/sweep.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/sweep.py --widths 2,4,8 --periods 5,10,20"
   }
 }

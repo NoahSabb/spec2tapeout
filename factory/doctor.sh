@@ -7,7 +7,7 @@ PDK_ROOT="${PDK_ROOT:-$HOME/.ciel}"
 missing=0
 chk() { # chk "label" cmd...
   local label="$1"; shift
-  if out="$("$@" 2>&1 | head -1)"; then printf '%-28s OK   %s\n' "$label" "$out"; else printf '%-28s MISSING (%s)\n' "$label" "$*"; missing=$((missing+1)); fi
+  if out="$("$@" 2>&1 </dev/null | head -1)"; then printf '%-28s OK   %s\n' "$label" "$out"; else printf '%-28s MISSING (%s)\n' "$label" "$*"; missing=$((missing+1)); fi
 }
 chk "python (.venv)"      "$ROOT/.venv/bin/python" --version
 chk "cocotb"              "$ROOT/.venv/bin/cocotb-config" --version
@@ -30,9 +30,11 @@ chk "klayout (nix)"       nix-shell "$LIBRELANE_DIR/shell.nix" --run "klayout -v
 chk "magic (nix)"         nix-shell "$LIBRELANE_DIR/shell.nix" --run "magic --version"
 chk "netgen (nix)"        nix-shell "$LIBRELANE_DIR/shell.nix" --run "which netgen"
 chk "yosys (nix)"         nix-shell "$LIBRELANE_DIR/shell.nix" --run "yosys -V"
+# open_pdks 8afc8346 ships the flow config under libs.tech/openlane (LibreLane reads either name)
+TECH_CFG="$PDK_ROOT/sky130A/libs.tech/librelane/config.tcl"; [ -f "$TECH_CFG" ] || TECH_CFG="$PDK_ROOT/sky130A/libs.tech/openlane/config.tcl"
 for f in "$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/verilog/primitives.v" \
          "$PDK_ROOT/sky130A/libs.ref/sky130_fd_sc_hd/verilog/sky130_fd_sc_hd.v" \
-         "$PDK_ROOT/sky130A/libs.tech/librelane/config.tcl"; do
+         "$TECH_CFG"; do
   if [ -f "$f" ]; then printf '%-28s OK   %s\n' "pdk file" "$f"; else printf '%-28s MISSING %s\n' "pdk file" "$f"; missing=$((missing+1)); fi
 done
 echo "free disk: $(df -h "$ROOT" | tail -1 | awk '{print $4}')"

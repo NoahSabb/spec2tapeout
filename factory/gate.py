@@ -19,7 +19,7 @@ def main():
         lf.flush()
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=ROOT)
         for line in p.stdout:
-            sys.stdout.write(line); lf.write(line)
+            sys.stdout.write(line); lf.write(line); sys.stdout.flush(); lf.flush()
         rc = p.wait()
         lf.write(f"# exit {rc} after {time.time()-t0:.1f}s\n")
     gates = {}

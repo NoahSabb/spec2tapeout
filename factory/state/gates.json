@@ -7,5 +7,77 @@
     "duration_s": 10.7,
     "log": "logs/gates/doctor.log",
     "cmd": "bash factory/doctor.sh"
+  },
+  "gen-golden": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:25:48Z",
+    "ended": "2026-10-28T08:25:48Z",
+    "duration_s": 0.0,
+    "log": "logs/gates/gen-golden.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python ref/gen_golden.py"
+  },
+  "lint": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:26:37Z",
+    "ended": "2026-10-28T08:26:37Z",
+    "duration_s": 0.2,
+    "log": "logs/gates/lint.log",
+    "cmd": "bash factory/lint.sh"
+  },
+  "sim-mac-w8": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:26:37Z",
+    "ended": "2026-10-28T08:26:38Z",
+    "duration_s": 1.3,
+    "log": "logs/gates/sim-mac-w8.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "synth-8": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:26:48Z",
+    "ended": "2026-10-28T08:26:50Z",
+    "duration_s": 2.4,
+    "log": "logs/gates/synth-8.log",
+    "cmd": "bash -c mkdir -p runs/synth && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/synth_check.py --width 8 --out runs/synth"
+  },
+  "sim-mac-w4": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:27:05Z",
+    "ended": "2026-10-28T08:27:06Z",
+    "duration_s": 0.8,
+    "log": "logs/gates/sim-mac-w4.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac WIDTH=4 ACC_WIDTH=10 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "sim-mac-w2": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:27:04Z",
+    "ended": "2026-10-28T08:27:05Z",
+    "duration_s": 0.8,
+    "log": "logs/gates/sim-mac-w2.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac WIDTH=2 ACC_WIDTH=20 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "sim-array-w8": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:27:06Z",
+    "ended": "2026-10-28T08:27:07Z",
+    "duration_s": 0.7,
+    "log": "logs/gates/sim-array-w8.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=array WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+  },
+  "sim-tt-w8": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T08:27:07Z",
+    "ended": "2026-10-28T08:27:08Z",
+    "duration_s": 0.8,
+    "log": "logs/gates/sim-tt-w8.log",
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=tt WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
   }
 }

@@ -27,3 +27,5 @@
 2026-10-28T08:27:07Z GATE sim-array-w8 PASS exit=0 log=logs/gates/sim-array-w8.log
 2026-10-28T08:27:08Z GATE sim-tt-w8 PASS exit=0 log=logs/gates/sim-tt-w8.log
 2026-10-28T08:27:21Z PHASE 2 NOTE: removed 3 malformed gate records (sim-mac, sim-array, sim-tt) created by a zsh word-splitting bug in my loop (make sim got TOP='mac 4 24'); the real gates sim-mac-w8/w4/w2, sim-array-w8, sim-tt-w8 all PASS
+2026-10-28T08:27:21Z PHASE 2 END
+2026-10-28T08:27:21Z PHASE 3 START

@@ -107,3 +107,8 @@
 2026-10-28T09:03:08Z GATE sim-gl-mac PASS exit=0 log=logs/gates/sim-gl-mac.log
 2026-10-28T09:03:19Z INGEST mac-w8-a15: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
 2026-10-28T09:03:38Z GATE render-mac-w8-a15 PASS exit=0 log=logs/gates/render-mac-w8-a15.log
+2026-10-28T09:03:39Z PHASE 4 END
+2026-10-28T09:03:39Z PHASE 5 START
+2026-10-28T09:03:39Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
+2026-10-28T09:03:57Z INGEST mac-w8-a15: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
+2026-10-28T09:04:16Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log

@@ -67,4 +67,8 @@ if __name__ == "__main__":
     p = O.ingest(os.path.abspath(a.run_dir), a.design, render=False)
     st = {s["id"]: s for s in p["stations"]}
     imgs = render_run(os.path.abspath(a.run_dir), a.design, st)
+    # write the image paths back into pipeline.json (ingest(render=False) above left them empty)
+    pj = os.path.join(ROOT, "factory", "state", "pipeline.json"); pipe = json.load(open(pj))
+    for s_ in pipe.get("stations", []): s_["image"] = imgs.get(s_["id"]) or s_.get("image")
+    json.dump(pipe, open(pj, "w"), indent=2)
     print(json.dumps(imgs, indent=2)); sys.exit(0 if imgs else 1)

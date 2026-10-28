@@ -1,7 +1,7 @@
 {
   "run_tag": "mac-w8-a15",
   "design": "mac_int8",
-  "generated_at": "2026-10-28T09:03:19Z",
+  "generated_at": "2026-10-28T09:03:57Z",
   "status": "pass",
   "run_dir": "runs/mac-w8-a15",
   "metrics_source": "final/metrics.json",
@@ -601,7 +601,7 @@
         "design__core__bbox": "5.52 10.88 219.88 223.04",
         "design__instance__utilization": 0.303538
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/floorplan/mac_int8.png",
       "explain": "The die and core outlines are created (relative sizing from FP_CORE_UTIL, or absolute from DIE_AREA) and standard-cell rows are laid down on the unithd site grid.",
       "inputs": [
         "netlist"
@@ -711,7 +711,7 @@
         "design__instance__area": 14605.3,
         "design__power_grid_violation__count": 0
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/pdn/mac_int8.png",
       "explain": "The power distribution network is built: met1 rails that follow the cell rows plus met4 straps every PDN_VPITCH um, connected by via stacks.",
       "inputs": [
         "ODB"
@@ -891,7 +891,7 @@
         "timing__hold__ws": 0.351935,
         "timing__setup__ws": 6.98381
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/gpl/mac_int8.png",
       "explain": "Cells are spread across the core by an electrostatic analogy (cells repel where density is high, wires pull them together) until overflow is below 10 percent.",
       "inputs": [
         "ODB"
@@ -1001,7 +1001,7 @@
         "design__instance__count": 2214,
         "design__instance__area": 15777.6
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/dpl/mac_int8.png",
       "explain": "Every cell is snapped to a legal row site with minimum displacement; check_placement must return 0.",
       "inputs": [
         "ODB"
@@ -1084,7 +1084,7 @@
         "timing__hold__ws": 0.260698,
         "timing__setup__ws": 6.95535
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/cts/mac_int8.png",
       "explain": "A clock tree of clkbuf cells is synthesized from the clock pin to every flop; from here on the clock is 'propagated' and real skew exists, which is why hold violations first appear now.",
       "inputs": [
         "ODB"
@@ -1378,7 +1378,7 @@
       "metrics": {
         "route__drc_errors": 0
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/drt/mac_int8.png",
       "explain": "Real wires and vias are drawn on the tracks with a built-in DRC engine; violations should fall to zero well before the 64th iteration.",
       "inputs": [
         "route guides"
@@ -1505,7 +1505,7 @@
         "design__instance__count": 10662,
         "design__instance__area": 45478.6
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/fill/mac_int8.png",
       "explain": "Gaps between cells are filled with fill and decap cells so power rails and wells are continuous and metal density rules are met.",
       "inputs": [
         "ODB"
@@ -1741,7 +1741,7 @@
       "metrics": {
         "design__xor_difference__count": 0
       },
-      "image": null,
+      "image": "runs/mac-w8-a15/renders/gds/mac_int8.png",
       "explain": "Two independent tools write the GDS from the same DEF and the two results are XOR-compared; any difference is a tool disagreement to investigate.",
       "inputs": [
         "DEF, cell GDS"
@@ -2151,6 +2151,24 @@
       "duration_s": 2.5,
       "log": "logs/gates/sim-gl-mac.log",
       "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/mac-w8-a15/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+    },
+    "render-mac-w8-a15": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:03:19Z",
+      "ended": "2026-10-28T09:03:38Z",
+      "duration_s": 19.2,
+      "log": "logs/gates/render-mac-w8-a15.log",
+      "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/render.py --run-dir runs/mac-w8-a15 --design mac_int8"
+    },
+    "dashboard": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:03:39Z",
+      "ended": "2026-10-28T09:03:39Z",
+      "duration_s": 0.0,
+      "log": "logs/gates/dashboard.log",
+      "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"
     }
   },
   "decisions": [

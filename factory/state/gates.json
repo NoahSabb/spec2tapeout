@@ -232,5 +232,14 @@
     "duration_s": 19.2,
     "log": "logs/gates/render-mac-w8-a15.log",
     "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/render.py --run-dir runs/mac-w8-a15 --design mac_int8"
+  },
+  "dashboard": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:04:16Z",
+    "ended": "2026-10-28T09:04:16Z",
+    "duration_s": 0.0,
+    "log": "logs/gates/dashboard.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"
   }
 }

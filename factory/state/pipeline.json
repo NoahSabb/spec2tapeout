@@ -1,9 +1,9 @@
 {
-  "run_tag": "mac-w8-a15",
+  "run_tag": "verify-20261028-023124",
   "design": "mac_int8",
-  "generated_at": "2026-10-28T09:15:54Z",
+  "generated_at": "2026-10-28T09:33:24Z",
   "status": "pass",
-  "run_dir": "runs/mac-w8-a15",
+  "run_dir": "runs/verify-20261028-023124",
   "metrics_source": "final/metrics.json",
   "metrics": {
     "timing__setup__ws": 0.5712657175665821,
@@ -258,10 +258,10 @@
         {
           "n": 1,
           "slug": "verilator-lint",
-          "dir": "runs/mac-w8-a15/01-verilator-lint",
-          "log": "runs/mac-w8-a15/01-verilator-lint/verilator-lint.log",
-          "started": "2026-10-28T09:00:48Z",
-          "ended": "2026-10-28T09:00:49Z",
+          "dir": "runs/verify-20261028-023124/01-verilator-lint",
+          "log": "runs/verify-20261028-023124/01-verilator-lint/verilator-lint.log",
+          "started": "2026-10-28T09:31:40Z",
+          "ended": "2026-10-28T09:31:41Z",
           "ok": true,
           "metrics_delta": {
             "design__lint_error__count": 0,
@@ -273,39 +273,39 @@
         {
           "n": 2,
           "slug": "checker-linttimingconstructs",
-          "dir": "runs/mac-w8-a15/02-checker-linttimingconstructs",
+          "dir": "runs/verify-20261028-023124/02-checker-linttimingconstructs",
           "log": null,
-          "started": "2026-10-28T09:00:49Z",
-          "ended": "2026-10-28T09:00:49Z",
+          "started": "2026-10-28T09:31:41Z",
+          "ended": "2026-10-28T09:31:41Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 3,
           "slug": "checker-linterrors",
-          "dir": "runs/mac-w8-a15/03-checker-linterrors",
+          "dir": "runs/verify-20261028-023124/03-checker-linterrors",
           "log": null,
-          "started": "2026-10-28T09:00:49Z",
-          "ended": "2026-10-28T09:00:49Z",
+          "started": "2026-10-28T09:31:41Z",
+          "ended": "2026-10-28T09:31:41Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 4,
           "slug": "checker-lintwarnings",
-          "dir": "runs/mac-w8-a15/04-checker-lintwarnings",
+          "dir": "runs/verify-20261028-023124/04-checker-lintwarnings",
           "log": null,
-          "started": "2026-10-28T09:00:49Z",
-          "ended": "2026-10-28T09:00:49Z",
+          "started": "2026-10-28T09:31:41Z",
+          "ended": "2026-10-28T09:31:41Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:00:48Z",
-      "ended": "2026-10-28T09:00:49Z",
+      "started": "2026-10-28T09:31:40Z",
+      "ended": "2026-10-28T09:31:41Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/01-verilator-lint/verilator-lint.log",
-      "dir": "runs/mac-w8-a15/01-verilator-lint",
+      "log": "runs/verify-20261028-023124/01-verilator-lint/verilator-lint.log",
+      "dir": "runs/verify-20261028-023124/01-verilator-lint",
       "metrics": {
         "design__lint_error__count": 0,
         "design__inferred_latch__count": 0
@@ -328,20 +328,20 @@
         {
           "n": 5,
           "slug": "yosys-jsonheader",
-          "dir": "runs/mac-w8-a15/05-yosys-jsonheader",
-          "log": "runs/mac-w8-a15/05-yosys-jsonheader/yosys-jsonheader.log",
-          "started": "2026-10-28T09:00:49Z",
-          "ended": "2026-10-28T09:00:49Z",
+          "dir": "runs/verify-20261028-023124/05-yosys-jsonheader",
+          "log": "runs/verify-20261028-023124/05-yosys-jsonheader/yosys-jsonheader.log",
+          "started": "2026-10-28T09:31:41Z",
+          "ended": "2026-10-28T09:31:41Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 6,
           "slug": "yosys-synthesis",
-          "dir": "runs/mac-w8-a15/06-yosys-synthesis",
-          "log": "runs/mac-w8-a15/06-yosys-synthesis/yosys-synthesis.log",
-          "started": "2026-10-28T09:00:49Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "dir": "runs/verify-20261028-023124/06-yosys-synthesis",
+          "log": "runs/verify-20261028-023124/06-yosys-synthesis/yosys-synthesis.log",
+          "started": "2026-10-28T09:31:41Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 1393,
@@ -353,39 +353,39 @@
         {
           "n": 7,
           "slug": "checker-yosysunmappedcells",
-          "dir": "runs/mac-w8-a15/07-checker-yosysunmappedcells",
+          "dir": "runs/verify-20261028-023124/07-checker-yosysunmappedcells",
           "log": null,
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 8,
           "slug": "checker-yosyssynthchecks",
-          "dir": "runs/mac-w8-a15/08-checker-yosyssynthchecks",
+          "dir": "runs/verify-20261028-023124/08-checker-yosyssynthchecks",
           "log": null,
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 9,
           "slug": "checker-netlistassignstatements",
-          "dir": "runs/mac-w8-a15/09-checker-netlistassignstatements",
+          "dir": "runs/verify-20261028-023124/09-checker-netlistassignstatements",
           "log": null,
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:00:49Z",
-      "ended": "2026-10-28T09:00:51Z",
+      "started": "2026-10-28T09:31:41Z",
+      "ended": "2026-10-28T09:31:43Z",
       "duration_s": 2.0,
-      "log": "runs/mac-w8-a15/06-yosys-synthesis/yosys-synthesis.log",
-      "dir": "runs/mac-w8-a15/05-yosys-jsonheader",
+      "log": "runs/verify-20261028-023124/06-yosys-synthesis/yosys-synthesis.log",
+      "dir": "runs/verify-20261028-023124/05-yosys-jsonheader",
       "metrics": {
         "design__instance__count": 1393,
         "design__instance__area": 13804.4896,
@@ -412,20 +412,20 @@
         {
           "n": 10,
           "slug": "openroad-checksdcfiles",
-          "dir": "runs/mac-w8-a15/10-openroad-checksdcfiles",
+          "dir": "runs/verify-20261028-023124/10-openroad-checksdcfiles",
           "log": null,
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 12,
           "slug": "openroad-staprepnr",
-          "dir": "runs/mac-w8-a15/12-openroad-staprepnr",
+          "dir": "runs/verify-20261028-023124/12-openroad-staprepnr",
           "log": null,
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:51Z",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:43Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.0006165828090161085,
@@ -452,11 +452,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:00:51Z",
-      "ended": "2026-10-28T09:00:51Z",
+      "started": "2026-10-28T09:31:43Z",
+      "ended": "2026-10-28T09:31:43Z",
       "duration_s": 0.0,
       "log": null,
-      "dir": "runs/mac-w8-a15/10-openroad-checksdcfiles",
+      "dir": "runs/verify-20261028-023124/10-openroad-checksdcfiles",
       "metrics": {
         "power__internal__total": 0.0006165828090161085,
         "power__switching__total": 0.0006164016667753458,
@@ -495,10 +495,10 @@
         {
           "n": 13,
           "slug": "openroad-floorplan",
-          "dir": "runs/mac-w8-a15/13-openroad-floorplan",
-          "log": "runs/mac-w8-a15/13-openroad-floorplan/openroad-floorplan.log",
-          "started": "2026-10-28T09:00:51Z",
-          "ended": "2026-10-28T09:00:52Z",
+          "dir": "runs/verify-20261028-023124/13-openroad-floorplan",
+          "log": "runs/verify-20261028-023124/13-openroad-floorplan/openroad-floorplan.log",
+          "started": "2026-10-28T09:31:43Z",
+          "ended": "2026-10-28T09:31:44Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__area": 13804.5,
@@ -536,30 +536,30 @@
         {
           "n": 14,
           "slug": "openroad-dumprcvalues",
-          "dir": "runs/mac-w8-a15/14-openroad-dumprcvalues",
-          "log": "runs/mac-w8-a15/14-openroad-dumprcvalues/openroad-dumprcvalues.log",
-          "started": "2026-10-28T09:00:52Z",
-          "ended": "2026-10-28T09:00:52Z",
+          "dir": "runs/verify-20261028-023124/14-openroad-dumprcvalues",
+          "log": "runs/verify-20261028-023124/14-openroad-dumprcvalues/openroad-dumprcvalues.log",
+          "started": "2026-10-28T09:31:44Z",
+          "ended": "2026-10-28T09:31:44Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 15,
           "slug": "odb-checkmacroantennaproperties",
-          "dir": "runs/mac-w8-a15/15-odb-checkmacroantennaproperties",
+          "dir": "runs/verify-20261028-023124/15-odb-checkmacroantennaproperties",
           "log": null,
-          "started": "2026-10-28T09:00:52Z",
-          "ended": "2026-10-28T09:00:52Z",
+          "started": "2026-10-28T09:31:44Z",
+          "ended": "2026-10-28T09:31:44Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 16,
           "slug": "odb-setpowerconnections",
-          "dir": "runs/mac-w8-a15/16-odb-setpowerconnections",
-          "log": "runs/mac-w8-a15/16-odb-setpowerconnections/odb-setpowerconnections.log",
-          "started": "2026-10-28T09:00:52Z",
-          "ended": "2026-10-28T09:00:53Z",
+          "dir": "runs/verify-20261028-023124/16-odb-setpowerconnections",
+          "log": "runs/verify-20261028-023124/16-odb-setpowerconnections/odb-setpowerconnections.log",
+          "started": "2026-10-28T09:31:44Z",
+          "ended": "2026-10-28T09:31:45Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 1,
@@ -569,20 +569,20 @@
         {
           "n": 17,
           "slug": "odb-manualmacroplacement",
-          "dir": "runs/mac-w8-a15/17-odb-manualmacroplacement",
+          "dir": "runs/verify-20261028-023124/17-odb-manualmacroplacement",
           "log": null,
-          "started": "2026-10-28T09:00:53Z",
-          "ended": "2026-10-28T09:00:53Z",
+          "started": "2026-10-28T09:31:45Z",
+          "ended": "2026-10-28T09:31:45Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 18,
           "slug": "openroad-cutrows",
-          "dir": "runs/mac-w8-a15/18-openroad-cutrows",
-          "log": "runs/mac-w8-a15/18-openroad-cutrows/openroad-cutrows.log",
-          "started": "2026-10-28T09:00:53Z",
-          "ended": "2026-10-28T09:00:53Z",
+          "dir": "runs/verify-20261028-023124/18-openroad-cutrows",
+          "log": "runs/verify-20261028-023124/18-openroad-cutrows/openroad-cutrows.log",
+          "started": "2026-10-28T09:31:45Z",
+          "ended": "2026-10-28T09:31:45Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 0,
@@ -590,18 +590,18 @@
           }
         }
       ],
-      "started": "2026-10-28T09:00:51Z",
-      "ended": "2026-10-28T09:00:53Z",
+      "started": "2026-10-28T09:31:43Z",
+      "ended": "2026-10-28T09:31:45Z",
       "duration_s": 2.0,
-      "log": "runs/mac-w8-a15/18-openroad-cutrows/openroad-cutrows.log",
-      "dir": "runs/mac-w8-a15/13-openroad-floorplan",
+      "log": "runs/verify-20261028-023124/18-openroad-cutrows/openroad-cutrows.log",
+      "dir": "runs/verify-20261028-023124/13-openroad-floorplan",
       "metrics": {
         "design__instance__area": 13804.5,
         "design__die__bbox": "0.0 0.0 225.55 236.27",
         "design__core__bbox": "5.52 10.88 219.88 223.04",
         "design__instance__utilization": 0.303538
       },
-      "image": "runs/mac-w8-a15/renders/floorplan/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/floorplan/mac_int8.png",
       "explain": "The die and core outlines are created (relative sizing from FP_CORE_UTIL, or absolute from DIE_AREA) and standard-cell rows are laid down on the unithd site grid.",
       "inputs": [
         "netlist"
@@ -619,10 +619,10 @@
         {
           "n": 19,
           "slug": "openroad-tapendcapinsertion",
-          "dir": "runs/mac-w8-a15/19-openroad-tapendcapinsertion",
-          "log": "runs/mac-w8-a15/19-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log",
-          "started": "2026-10-28T09:00:53Z",
-          "ended": "2026-10-28T09:00:54Z",
+          "dir": "runs/verify-20261028-023124/19-openroad-tapendcapinsertion",
+          "log": "runs/verify-20261028-023124/19-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log",
+          "started": "2026-10-28T09:31:45Z",
+          "ended": "2026-10-28T09:31:46Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2189,
@@ -638,11 +638,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:00:53Z",
-      "ended": "2026-10-28T09:00:54Z",
+      "started": "2026-10-28T09:31:45Z",
+      "ended": "2026-10-28T09:31:46Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/19-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log",
-      "dir": "runs/mac-w8-a15/19-openroad-tapendcapinsertion",
+      "log": "runs/verify-20261028-023124/19-openroad-tapendcapinsertion/openroad-tapendcapinsertion.log",
+      "dir": "runs/verify-20261028-023124/19-openroad-tapendcapinsertion",
       "metrics": {
         "design__instance__count": 2189,
         "design__instance__area": 15190.8,
@@ -666,20 +666,20 @@
         {
           "n": 20,
           "slug": "odb-addpdnobstructions",
-          "dir": "runs/mac-w8-a15/20-odb-addpdnobstructions",
+          "dir": "runs/verify-20261028-023124/20-odb-addpdnobstructions",
           "log": null,
-          "started": "2026-10-28T09:00:54Z",
-          "ended": "2026-10-28T09:00:54Z",
+          "started": "2026-10-28T09:31:46Z",
+          "ended": "2026-10-28T09:31:46Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 21,
           "slug": "openroad-generatepdn",
-          "dir": "runs/mac-w8-a15/21-openroad-generatepdn",
-          "log": "runs/mac-w8-a15/21-openroad-generatepdn/openroad-generatepdn.log",
-          "started": "2026-10-28T09:00:54Z",
-          "ended": "2026-10-28T09:00:54Z",
+          "dir": "runs/verify-20261028-023124/21-openroad-generatepdn",
+          "log": "runs/verify-20261028-023124/21-openroad-generatepdn/openroad-generatepdn.log",
+          "started": "2026-10-28T09:31:46Z",
+          "ended": "2026-10-28T09:31:46Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2033,
@@ -693,25 +693,25 @@
         {
           "n": 22,
           "slug": "odb-removepdnobstructions",
-          "dir": "runs/mac-w8-a15/22-odb-removepdnobstructions",
+          "dir": "runs/verify-20261028-023124/22-odb-removepdnobstructions",
           "log": null,
-          "started": "2026-10-28T09:00:54Z",
-          "ended": "2026-10-28T09:00:54Z",
+          "started": "2026-10-28T09:31:46Z",
+          "ended": "2026-10-28T09:31:46Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:00:54Z",
-      "ended": "2026-10-28T09:00:54Z",
+      "started": "2026-10-28T09:31:46Z",
+      "ended": "2026-10-28T09:31:46Z",
       "duration_s": 0.0,
-      "log": "runs/mac-w8-a15/21-openroad-generatepdn/openroad-generatepdn.log",
-      "dir": "runs/mac-w8-a15/20-odb-addpdnobstructions",
+      "log": "runs/verify-20261028-023124/21-openroad-generatepdn/openroad-generatepdn.log",
+      "dir": "runs/verify-20261028-023124/20-odb-addpdnobstructions",
       "metrics": {
         "design__instance__count": 2033,
         "design__instance__area": 14605.3,
         "design__power_grid_violation__count": 0
       },
-      "image": "runs/mac-w8-a15/renders/pdn/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/pdn/mac_int8.png",
       "explain": "The power distribution network is built: met1 rails that follow the cell rows plus met4 straps every PDN_VPITCH um, connected by via stacks.",
       "inputs": [
         "ODB"
@@ -729,30 +729,30 @@
         {
           "n": 23,
           "slug": "odb-addroutingobstructions",
-          "dir": "runs/mac-w8-a15/23-odb-addroutingobstructions",
+          "dir": "runs/verify-20261028-023124/23-odb-addroutingobstructions",
           "log": null,
-          "started": "2026-10-28T09:00:54Z",
-          "ended": "2026-10-28T09:00:54Z",
+          "started": "2026-10-28T09:31:46Z",
+          "ended": "2026-10-28T09:31:46Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 24,
           "slug": "openroad-globalplacementskipio",
-          "dir": "runs/mac-w8-a15/24-openroad-globalplacementskipio",
-          "log": "runs/mac-w8-a15/24-openroad-globalplacementskipio/openroad-globalplacementskipio.log",
-          "started": "2026-10-28T09:00:54Z",
-          "ended": "2026-10-28T09:00:55Z",
+          "dir": "runs/verify-20261028-023124/24-openroad-globalplacementskipio",
+          "log": "runs/verify-20261028-023124/24-openroad-globalplacementskipio/openroad-globalplacementskipio.log",
+          "started": "2026-10-28T09:31:46Z",
+          "ended": "2026-10-28T09:31:47Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 25,
           "slug": "openroad-ioplacement",
-          "dir": "runs/mac-w8-a15/25-openroad-ioplacement",
-          "log": "runs/mac-w8-a15/25-openroad-ioplacement/openroad-ioplacement.log",
-          "started": "2026-10-28T09:00:55Z",
-          "ended": "2026-10-28T09:00:55Z",
+          "dir": "runs/verify-20261028-023124/25-openroad-ioplacement",
+          "log": "runs/verify-20261028-023124/25-openroad-ioplacement/openroad-ioplacement.log",
+          "started": "2026-10-28T09:31:47Z",
+          "ended": "2026-10-28T09:31:47Z",
           "ok": true,
           "metrics_delta": {
             "floorplan__design__io": 52,
@@ -762,29 +762,29 @@
         {
           "n": 26,
           "slug": "odb-customioplacement",
-          "dir": "runs/mac-w8-a15/26-odb-customioplacement",
+          "dir": "runs/verify-20261028-023124/26-odb-customioplacement",
           "log": null,
-          "started": "2026-10-28T09:00:55Z",
-          "ended": "2026-10-28T09:00:55Z",
+          "started": "2026-10-28T09:31:47Z",
+          "ended": "2026-10-28T09:31:47Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 27,
           "slug": "odb-applydeftemplate",
-          "dir": "runs/mac-w8-a15/27-odb-applydeftemplate",
+          "dir": "runs/verify-20261028-023124/27-odb-applydeftemplate",
           "log": null,
-          "started": "2026-10-28T09:00:55Z",
-          "ended": "2026-10-28T09:00:55Z",
+          "started": "2026-10-28T09:31:47Z",
+          "ended": "2026-10-28T09:31:47Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:00:54Z",
-      "ended": "2026-10-28T09:00:55Z",
+      "started": "2026-10-28T09:31:46Z",
+      "ended": "2026-10-28T09:31:47Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/25-openroad-ioplacement/openroad-ioplacement.log",
-      "dir": "runs/mac-w8-a15/23-odb-addroutingobstructions",
+      "log": "runs/verify-20261028-023124/25-openroad-ioplacement/openroad-ioplacement.log",
+      "dir": "runs/verify-20261028-023124/23-odb-addroutingobstructions",
       "metrics": {},
       "image": null,
       "explain": "Top-level pins are placed on the die edge (met2 vertical / met3 horizontal), or copied from a template DEF on Tiny Tapeout.",
@@ -804,10 +804,10 @@
         {
           "n": 28,
           "slug": "openroad-globalplacement",
-          "dir": "runs/mac-w8-a15/28-openroad-globalplacement",
-          "log": "runs/mac-w8-a15/28-openroad-globalplacement/openroad-globalplacement.log",
-          "started": "2026-10-28T09:00:55Z",
-          "ended": "2026-10-28T09:00:57Z",
+          "dir": "runs/verify-20261028-023124/28-openroad-globalplacement",
+          "log": "runs/verify-20261028-023124/28-openroad-globalplacement/openroad-globalplacement.log",
+          "started": "2026-10-28T09:31:47Z",
+          "ended": "2026-10-28T09:31:49Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2140,
@@ -823,10 +823,10 @@
         {
           "n": 29,
           "slug": "odb-writeverilogheader",
-          "dir": "runs/mac-w8-a15/29-odb-writeverilogheader",
-          "log": "runs/mac-w8-a15/29-odb-writeverilogheader/odb-writeverilogheader.log",
-          "started": "2026-10-28T09:00:57Z",
-          "ended": "2026-10-28T09:00:57Z",
+          "dir": "runs/verify-20261028-023124/29-odb-writeverilogheader",
+          "log": "runs/verify-20261028-023124/29-odb-writeverilogheader/odb-writeverilogheader.log",
+          "started": "2026-10-28T09:31:49Z",
+          "ended": "2026-10-28T09:31:49Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 1,
@@ -836,20 +836,20 @@
         {
           "n": 30,
           "slug": "checker-powergridviolations",
-          "dir": "runs/mac-w8-a15/30-checker-powergridviolations",
+          "dir": "runs/verify-20261028-023124/30-checker-powergridviolations",
           "log": null,
-          "started": "2026-10-28T09:00:57Z",
-          "ended": "2026-10-28T09:00:57Z",
+          "started": "2026-10-28T09:31:49Z",
+          "ended": "2026-10-28T09:31:49Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 31,
           "slug": "openroad-stamidpnr",
-          "dir": "runs/mac-w8-a15/31-openroad-stamidpnr",
-          "log": "runs/mac-w8-a15/31-openroad-stamidpnr/openroad-stamidpnr.log",
-          "started": "2026-10-28T09:00:57Z",
-          "ended": "2026-10-28T09:00:58Z",
+          "dir": "runs/verify-20261028-023124/31-openroad-stamidpnr",
+          "log": "runs/verify-20261028-023124/31-openroad-stamidpnr/openroad-stamidpnr.log",
+          "started": "2026-10-28T09:31:49Z",
+          "ended": "2026-10-28T09:31:50Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.000582233,
@@ -870,11 +870,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:00:55Z",
-      "ended": "2026-10-28T09:00:58Z",
+      "started": "2026-10-28T09:31:47Z",
+      "ended": "2026-10-28T09:31:50Z",
       "duration_s": 3.0,
-      "log": "runs/mac-w8-a15/31-openroad-stamidpnr/openroad-stamidpnr.log",
-      "dir": "runs/mac-w8-a15/28-openroad-globalplacement",
+      "log": "runs/verify-20261028-023124/31-openroad-stamidpnr/openroad-stamidpnr.log",
+      "dir": "runs/verify-20261028-023124/28-openroad-globalplacement",
       "metrics": {
         "design__instance__count": 2140,
         "design__instance__area": 15356,
@@ -891,7 +891,7 @@
         "timing__hold__ws": 0.351935,
         "timing__setup__ws": 6.98381
       },
-      "image": "runs/mac-w8-a15/renders/gpl/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/gpl/mac_int8.png",
       "explain": "Cells are spread across the core by an electrostatic analogy (cells repel where density is high, wires pull them together) until overflow is below 10 percent.",
       "inputs": [
         "ODB"
@@ -909,10 +909,10 @@
         {
           "n": 32,
           "slug": "openroad-repairdesignpostgpl",
-          "dir": "runs/mac-w8-a15/32-openroad-repairdesignpostgpl",
-          "log": "runs/mac-w8-a15/32-openroad-repairdesignpostgpl/openroad-repairdesignpostgpl.log",
-          "started": "2026-10-28T09:00:58Z",
-          "ended": "2026-10-28T09:01:00Z",
+          "dir": "runs/verify-20261028-023124/32-openroad-repairdesignpostgpl",
+          "log": "runs/verify-20261028-023124/32-openroad-repairdesignpostgpl/openroad-repairdesignpostgpl.log",
+          "started": "2026-10-28T09:31:50Z",
+          "ended": "2026-10-28T09:31:52Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2370,
@@ -940,19 +940,19 @@
         {
           "n": 33,
           "slug": "odb-manualglobalplacement",
-          "dir": "runs/mac-w8-a15/33-odb-manualglobalplacement",
+          "dir": "runs/verify-20261028-023124/33-odb-manualglobalplacement",
           "log": null,
-          "started": "2026-10-28T09:01:00Z",
-          "ended": "2026-10-28T09:01:00Z",
+          "started": "2026-10-28T09:31:52Z",
+          "ended": "2026-10-28T09:31:52Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:00:58Z",
-      "ended": "2026-10-28T09:01:00Z",
+      "started": "2026-10-28T09:31:50Z",
+      "ended": "2026-10-28T09:31:52Z",
       "duration_s": 2.0,
-      "log": "runs/mac-w8-a15/32-openroad-repairdesignpostgpl/openroad-repairdesignpostgpl.log",
-      "dir": "runs/mac-w8-a15/32-openroad-repairdesignpostgpl",
+      "log": "runs/verify-20261028-023124/32-openroad-repairdesignpostgpl/openroad-repairdesignpostgpl.log",
+      "dir": "runs/verify-20261028-023124/32-openroad-repairdesignpostgpl",
       "metrics": {
         "design__instance__count": 2370,
         "design__instance__area": 16363.2,
@@ -976,10 +976,10 @@
         {
           "n": 34,
           "slug": "openroad-detailedplacement",
-          "dir": "runs/mac-w8-a15/34-openroad-detailedplacement",
-          "log": "runs/mac-w8-a15/34-openroad-detailedplacement/openroad-detailedplacement.log",
-          "started": "2026-10-28T09:01:00Z",
-          "ended": "2026-10-28T09:01:01Z",
+          "dir": "runs/verify-20261028-023124/34-openroad-detailedplacement",
+          "log": "runs/verify-20261028-023124/34-openroad-detailedplacement/openroad-detailedplacement.log",
+          "started": "2026-10-28T09:31:52Z",
+          "ended": "2026-10-28T09:31:53Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2214,
@@ -992,16 +992,16 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:00Z",
-      "ended": "2026-10-28T09:01:01Z",
+      "started": "2026-10-28T09:31:52Z",
+      "ended": "2026-10-28T09:31:53Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/34-openroad-detailedplacement/openroad-detailedplacement.log",
-      "dir": "runs/mac-w8-a15/34-openroad-detailedplacement",
+      "log": "runs/verify-20261028-023124/34-openroad-detailedplacement/openroad-detailedplacement.log",
+      "dir": "runs/verify-20261028-023124/34-openroad-detailedplacement",
       "metrics": {
         "design__instance__count": 2214,
         "design__instance__area": 15777.6
       },
-      "image": "runs/mac-w8-a15/renders/dpl/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/dpl/mac_int8.png",
       "explain": "Every cell is snapped to a legal row site with minimum displacement; check_placement must return 0.",
       "inputs": [
         "ODB"
@@ -1019,10 +1019,10 @@
         {
           "n": 35,
           "slug": "openroad-cts",
-          "dir": "runs/mac-w8-a15/35-openroad-cts",
-          "log": "runs/mac-w8-a15/35-openroad-cts/openroad-cts.log",
-          "started": "2026-10-28T09:01:01Z",
-          "ended": "2026-10-28T09:01:06Z",
+          "dir": "runs/verify-20261028-023124/35-openroad-cts",
+          "log": "runs/verify-20261028-023124/35-openroad-cts/openroad-cts.log",
+          "started": "2026-10-28T09:31:53Z",
+          "ended": "2026-10-28T09:31:58Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2375,
@@ -1044,10 +1044,10 @@
         {
           "n": 36,
           "slug": "openroad-stamidpnr-1",
-          "dir": "runs/mac-w8-a15/36-openroad-stamidpnr-1",
-          "log": "runs/mac-w8-a15/36-openroad-stamidpnr-1/openroad-stamidpnr-1.log",
-          "started": "2026-10-28T09:01:06Z",
-          "ended": "2026-10-28T09:01:07Z",
+          "dir": "runs/verify-20261028-023124/36-openroad-stamidpnr-1",
+          "log": "runs/verify-20261028-023124/36-openroad-stamidpnr-1/openroad-stamidpnr-1.log",
+          "started": "2026-10-28T09:31:58Z",
+          "ended": "2026-10-28T09:31:59Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.00065045,
@@ -1065,11 +1065,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:01Z",
-      "ended": "2026-10-28T09:01:07Z",
+      "started": "2026-10-28T09:31:53Z",
+      "ended": "2026-10-28T09:31:59Z",
       "duration_s": 6.0,
-      "log": "runs/mac-w8-a15/36-openroad-stamidpnr-1/openroad-stamidpnr-1.log",
-      "dir": "runs/mac-w8-a15/35-openroad-cts",
+      "log": "runs/verify-20261028-023124/36-openroad-stamidpnr-1/openroad-stamidpnr-1.log",
+      "dir": "runs/verify-20261028-023124/35-openroad-cts",
       "metrics": {
         "design__instance__count": 2375,
         "design__instance__area": 16488.3,
@@ -1084,7 +1084,7 @@
         "timing__hold__ws": 0.260698,
         "timing__setup__ws": 6.95535
       },
-      "image": "runs/mac-w8-a15/renders/cts/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/cts/mac_int8.png",
       "explain": "A clock tree of clkbuf cells is synthesized from the clock pin to every flop; from here on the clock is 'propagated' and real skew exists, which is why hold violations first appear now.",
       "inputs": [
         "ODB"
@@ -1102,10 +1102,10 @@
         {
           "n": 37,
           "slug": "openroad-resizertimingpostcts",
-          "dir": "runs/mac-w8-a15/37-openroad-resizertimingpostcts",
-          "log": "runs/mac-w8-a15/37-openroad-resizertimingpostcts/openroad-resizertimingpostcts.log",
-          "started": "2026-10-28T09:01:07Z",
-          "ended": "2026-10-28T09:01:10Z",
+          "dir": "runs/verify-20261028-023124/37-openroad-resizertimingpostcts",
+          "log": "runs/verify-20261028-023124/37-openroad-resizertimingpostcts/openroad-resizertimingpostcts.log",
+          "started": "2026-10-28T09:31:59Z",
+          "ended": "2026-10-28T09:32:02Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 2390,
@@ -1128,10 +1128,10 @@
         {
           "n": 38,
           "slug": "openroad-stamidpnr-2",
-          "dir": "runs/mac-w8-a15/38-openroad-stamidpnr-2",
-          "log": "runs/mac-w8-a15/38-openroad-stamidpnr-2/openroad-stamidpnr-2.log",
-          "started": "2026-10-28T09:01:10Z",
-          "ended": "2026-10-28T09:01:11Z",
+          "dir": "runs/verify-20261028-023124/38-openroad-stamidpnr-2",
+          "log": "runs/verify-20261028-023124/38-openroad-stamidpnr-2/openroad-stamidpnr-2.log",
+          "started": "2026-10-28T09:32:02Z",
+          "ended": "2026-10-28T09:32:02Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.000655168,
@@ -1145,11 +1145,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:07Z",
-      "ended": "2026-10-28T09:01:11Z",
-      "duration_s": 4.0,
-      "log": "runs/mac-w8-a15/38-openroad-stamidpnr-2/openroad-stamidpnr-2.log",
-      "dir": "runs/mac-w8-a15/37-openroad-resizertimingpostcts",
+      "started": "2026-10-28T09:31:59Z",
+      "ended": "2026-10-28T09:32:02Z",
+      "duration_s": 3.0,
+      "log": "runs/verify-20261028-023124/38-openroad-stamidpnr-2/openroad-stamidpnr-2.log",
+      "dir": "runs/verify-20261028-023124/37-openroad-resizertimingpostcts",
       "metrics": {
         "design__instance__count": 2390,
         "design__instance__area": 16638.5,
@@ -1178,10 +1178,10 @@
         {
           "n": 39,
           "slug": "openroad-globalrouting",
-          "dir": "runs/mac-w8-a15/39-openroad-globalrouting",
-          "log": "runs/mac-w8-a15/39-openroad-globalrouting/openroad-globalrouting.log",
-          "started": "2026-10-28T09:01:11Z",
-          "ended": "2026-10-28T09:01:11Z",
+          "dir": "runs/verify-20261028-023124/39-openroad-globalrouting",
+          "log": "runs/verify-20261028-023124/39-openroad-globalrouting/openroad-globalrouting.log",
+          "started": "2026-10-28T09:32:02Z",
+          "ended": "2026-10-28T09:32:03Z",
           "ok": true,
           "metrics_delta": {
             "global_route__vias": 12239,
@@ -1191,10 +1191,10 @@
         {
           "n": 40,
           "slug": "openroad-checkantennas",
-          "dir": "runs/mac-w8-a15/40-openroad-checkantennas",
-          "log": "runs/mac-w8-a15/40-openroad-checkantennas/openroad-checkantennas.log",
-          "started": "2026-10-28T09:01:11Z",
-          "ended": "2026-10-28T09:01:12Z",
+          "dir": "runs/verify-20261028-023124/40-openroad-checkantennas",
+          "log": "runs/verify-20261028-023124/40-openroad-checkantennas/openroad-checkantennas.log",
+          "started": "2026-10-28T09:32:03Z",
+          "ended": "2026-10-28T09:32:04Z",
           "ok": true,
           "metrics_delta": {
             "antenna__violating__nets": 1,
@@ -1205,19 +1205,19 @@
         {
           "n": 41,
           "slug": "odb-diodesonports",
-          "dir": "runs/mac-w8-a15/41-odb-diodesonports",
+          "dir": "runs/verify-20261028-023124/41-odb-diodesonports",
           "log": null,
-          "started": "2026-10-28T09:01:12Z",
-          "ended": "2026-10-28T09:01:12Z",
+          "started": "2026-10-28T09:32:04Z",
+          "ended": "2026-10-28T09:32:04Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:11Z",
-      "ended": "2026-10-28T09:01:12Z",
-      "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/40-openroad-checkantennas/openroad-checkantennas.log",
-      "dir": "runs/mac-w8-a15/39-openroad-globalrouting",
+      "started": "2026-10-28T09:32:02Z",
+      "ended": "2026-10-28T09:32:04Z",
+      "duration_s": 2.0,
+      "log": "runs/verify-20261028-023124/40-openroad-checkantennas/openroad-checkantennas.log",
+      "dir": "runs/verify-20261028-023124/39-openroad-globalrouting",
       "metrics": {
         "antenna__violating__nets": 1,
         "antenna__violating__pins": 1,
@@ -1241,10 +1241,10 @@
         {
           "n": 42,
           "slug": "openroad-repairantennas",
-          "dir": "runs/mac-w8-a15/42-openroad-repairantennas",
+          "dir": "runs/verify-20261028-023124/42-openroad-repairantennas",
           "log": null,
-          "started": "2026-10-28T09:01:12Z",
-          "ended": "2026-10-28T09:01:16Z",
+          "started": "2026-10-28T09:32:04Z",
+          "ended": "2026-10-28T09:32:07Z",
           "ok": true,
           "metrics_delta": {
             "antenna__violating__nets": 0,
@@ -1256,10 +1256,10 @@
         {
           "n": 43,
           "slug": "openroad-stamidpnr-3",
-          "dir": "runs/mac-w8-a15/43-openroad-stamidpnr-3",
-          "log": "runs/mac-w8-a15/43-openroad-stamidpnr-3/openroad-stamidpnr-3.log",
-          "started": "2026-10-28T09:01:16Z",
-          "ended": "2026-10-28T09:01:16Z",
+          "dir": "runs/verify-20261028-023124/43-openroad-stamidpnr-3",
+          "log": "runs/verify-20261028-023124/43-openroad-stamidpnr-3/openroad-stamidpnr-3.log",
+          "started": "2026-10-28T09:32:07Z",
+          "ended": "2026-10-28T09:32:08Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.000656252,
@@ -1273,11 +1273,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:12Z",
-      "ended": "2026-10-28T09:01:16Z",
+      "started": "2026-10-28T09:32:04Z",
+      "ended": "2026-10-28T09:32:08Z",
       "duration_s": 4.0,
-      "log": "runs/mac-w8-a15/43-openroad-stamidpnr-3/openroad-stamidpnr-3.log",
-      "dir": "runs/mac-w8-a15/42-openroad-repairantennas",
+      "log": "runs/verify-20261028-023124/43-openroad-stamidpnr-3/openroad-stamidpnr-3.log",
+      "dir": "runs/verify-20261028-023124/42-openroad-repairantennas",
       "metrics": {
         "antenna__violating__nets": 0,
         "antenna__violating__pins": 0,
@@ -1308,10 +1308,10 @@
         {
           "n": 44,
           "slug": "openroad-detailedrouting",
-          "dir": "runs/mac-w8-a15/44-openroad-detailedrouting",
-          "log": "runs/mac-w8-a15/44-openroad-detailedrouting/openroad-detailedrouting.log",
-          "started": "2026-10-28T09:01:16Z",
-          "ended": "2026-10-28T09:01:38Z",
+          "dir": "runs/verify-20261028-023124/44-openroad-detailedrouting",
+          "log": "runs/verify-20261028-023124/44-openroad-detailedrouting/openroad-detailedrouting.log",
+          "started": "2026-10-28T09:32:08Z",
+          "ended": "2026-10-28T09:32:29Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 10,
@@ -1339,20 +1339,20 @@
         {
           "n": 45,
           "slug": "odb-removeroutingobstructions",
-          "dir": "runs/mac-w8-a15/45-odb-removeroutingobstructions",
+          "dir": "runs/verify-20261028-023124/45-odb-removeroutingobstructions",
           "log": null,
-          "started": "2026-10-28T09:01:38Z",
-          "ended": "2026-10-28T09:01:38Z",
+          "started": "2026-10-28T09:32:29Z",
+          "ended": "2026-10-28T09:32:29Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 46,
           "slug": "openroad-checkantennas-1",
-          "dir": "runs/mac-w8-a15/46-openroad-checkantennas-1",
-          "log": "runs/mac-w8-a15/46-openroad-checkantennas-1/openroad-checkantennas-1.log",
-          "started": "2026-10-28T09:01:38Z",
-          "ended": "2026-10-28T09:01:39Z",
+          "dir": "runs/verify-20261028-023124/46-openroad-checkantennas-1",
+          "log": "runs/verify-20261028-023124/46-openroad-checkantennas-1/openroad-checkantennas-1.log",
+          "started": "2026-10-28T09:32:29Z",
+          "ended": "2026-10-28T09:32:30Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 0,
@@ -1362,23 +1362,23 @@
         {
           "n": 47,
           "slug": "checker-trdrc",
-          "dir": "runs/mac-w8-a15/47-checker-trdrc",
+          "dir": "runs/verify-20261028-023124/47-checker-trdrc",
           "log": null,
-          "started": "2026-10-28T09:01:39Z",
-          "ended": "2026-10-28T09:01:39Z",
+          "started": "2026-10-28T09:32:30Z",
+          "ended": "2026-10-28T09:32:30Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:16Z",
-      "ended": "2026-10-28T09:01:39Z",
-      "duration_s": 23.0,
-      "log": "runs/mac-w8-a15/46-openroad-checkantennas-1/openroad-checkantennas-1.log",
-      "dir": "runs/mac-w8-a15/44-openroad-detailedrouting",
+      "started": "2026-10-28T09:32:08Z",
+      "ended": "2026-10-28T09:32:30Z",
+      "duration_s": 22.0,
+      "log": "runs/verify-20261028-023124/46-openroad-checkantennas-1/openroad-checkantennas-1.log",
+      "dir": "runs/verify-20261028-023124/44-openroad-detailedrouting",
       "metrics": {
         "route__drc_errors": 0
       },
-      "image": "runs/mac-w8-a15/renders/drt/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/drt/mac_int8.png",
       "explain": "Real wires and vias are drawn on the tracks with a built-in DRC engine; violations should fall to zero well before the 64th iteration.",
       "inputs": [
         "route guides"
@@ -1396,10 +1396,10 @@
         {
           "n": 48,
           "slug": "odb-reportdisconnectedpins",
-          "dir": "runs/mac-w8-a15/48-odb-reportdisconnectedpins",
-          "log": "runs/mac-w8-a15/48-odb-reportdisconnectedpins/odb-reportdisconnectedpins.log",
-          "started": "2026-10-28T09:01:39Z",
-          "ended": "2026-10-28T09:01:40Z",
+          "dir": "runs/verify-20261028-023124/48-odb-reportdisconnectedpins",
+          "log": "runs/verify-20261028-023124/48-odb-reportdisconnectedpins/odb-reportdisconnectedpins.log",
+          "started": "2026-10-28T09:32:30Z",
+          "ended": "2026-10-28T09:32:31Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 1,
@@ -1411,20 +1411,20 @@
         {
           "n": 49,
           "slug": "checker-disconnectedpins",
-          "dir": "runs/mac-w8-a15/49-checker-disconnectedpins",
+          "dir": "runs/verify-20261028-023124/49-checker-disconnectedpins",
           "log": null,
-          "started": "2026-10-28T09:01:40Z",
-          "ended": "2026-10-28T09:01:40Z",
+          "started": "2026-10-28T09:32:31Z",
+          "ended": "2026-10-28T09:32:31Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 50,
           "slug": "odb-reportwirelength",
-          "dir": "runs/mac-w8-a15/50-odb-reportwirelength",
-          "log": "runs/mac-w8-a15/50-odb-reportwirelength/odb-reportwirelength.log",
-          "started": "2026-10-28T09:01:40Z",
-          "ended": "2026-10-28T09:01:40Z",
+          "dir": "runs/verify-20261028-023124/50-odb-reportwirelength",
+          "log": "runs/verify-20261028-023124/50-odb-reportwirelength/odb-reportwirelength.log",
+          "started": "2026-10-28T09:32:31Z",
+          "ended": "2026-10-28T09:32:31Z",
           "ok": true,
           "metrics_delta": {
             "route__wirelength__max": 364.705
@@ -1433,19 +1433,19 @@
         {
           "n": 51,
           "slug": "checker-wirelength",
-          "dir": "runs/mac-w8-a15/51-checker-wirelength",
+          "dir": "runs/verify-20261028-023124/51-checker-wirelength",
           "log": null,
-          "started": "2026-10-28T09:01:40Z",
-          "ended": "2026-10-28T09:01:40Z",
+          "started": "2026-10-28T09:32:31Z",
+          "ended": "2026-10-28T09:32:31Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:39Z",
-      "ended": "2026-10-28T09:01:40Z",
+      "started": "2026-10-28T09:32:30Z",
+      "ended": "2026-10-28T09:32:31Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/50-odb-reportwirelength/odb-reportwirelength.log",
-      "dir": "runs/mac-w8-a15/48-odb-reportdisconnectedpins",
+      "log": "runs/verify-20261028-023124/50-odb-reportwirelength/odb-reportwirelength.log",
+      "dir": "runs/verify-20261028-023124/48-odb-reportdisconnectedpins",
       "metrics": {
         "design__critical_disconnected_pin__count": 0,
         "route__wirelength__max": 364.705
@@ -1468,10 +1468,10 @@
         {
           "n": 52,
           "slug": "openroad-fillinsertion",
-          "dir": "runs/mac-w8-a15/52-openroad-fillinsertion",
-          "log": "runs/mac-w8-a15/52-openroad-fillinsertion/openroad-fillinsertion.log",
-          "started": "2026-10-28T09:01:40Z",
-          "ended": "2026-10-28T09:01:41Z",
+          "dir": "runs/verify-20261028-023124/52-openroad-fillinsertion",
+          "log": "runs/verify-20261028-023124/52-openroad-fillinsertion/openroad-fillinsertion.log",
+          "started": "2026-10-28T09:32:31Z",
+          "ended": "2026-10-28T09:32:32Z",
           "ok": true,
           "metrics_delta": {
             "design__instance__count": 10662,
@@ -1485,10 +1485,10 @@
         {
           "n": 53,
           "slug": "odb-cellfrequencytables",
-          "dir": "runs/mac-w8-a15/53-odb-cellfrequencytables",
-          "log": "runs/mac-w8-a15/53-odb-cellfrequencytables/odb-cellfrequencytables.log",
-          "started": "2026-10-28T09:01:41Z",
-          "ended": "2026-10-28T09:01:42Z",
+          "dir": "runs/verify-20261028-023124/53-odb-cellfrequencytables",
+          "log": "runs/verify-20261028-023124/53-odb-cellfrequencytables/odb-cellfrequencytables.log",
+          "started": "2026-10-28T09:32:32Z",
+          "ended": "2026-10-28T09:32:33Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 1,
@@ -1496,16 +1496,16 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:40Z",
-      "ended": "2026-10-28T09:01:42Z",
+      "started": "2026-10-28T09:32:31Z",
+      "ended": "2026-10-28T09:32:33Z",
       "duration_s": 2.0,
-      "log": "runs/mac-w8-a15/53-odb-cellfrequencytables/odb-cellfrequencytables.log",
-      "dir": "runs/mac-w8-a15/52-openroad-fillinsertion",
+      "log": "runs/verify-20261028-023124/53-odb-cellfrequencytables/odb-cellfrequencytables.log",
+      "dir": "runs/verify-20261028-023124/52-openroad-fillinsertion",
       "metrics": {
         "design__instance__count": 10662,
         "design__instance__area": 45478.6
       },
-      "image": "runs/mac-w8-a15/renders/fill/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/fill/mac_int8.png",
       "explain": "Gaps between cells are filled with fill and decap cells so power rails and wells are continuous and metal density rules are met.",
       "inputs": [
         "ODB"
@@ -1523,19 +1523,19 @@
         {
           "n": 54,
           "slug": "openroad-rcx",
-          "dir": "runs/mac-w8-a15/54-openroad-rcx",
+          "dir": "runs/verify-20261028-023124/54-openroad-rcx",
           "log": null,
-          "started": "2026-10-28T09:01:42Z",
-          "ended": "2026-10-28T09:01:42Z",
+          "started": "2026-10-28T09:32:33Z",
+          "ended": "2026-10-28T09:32:33Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:42Z",
-      "ended": "2026-10-28T09:01:42Z",
+      "started": "2026-10-28T09:32:33Z",
+      "ended": "2026-10-28T09:32:33Z",
       "duration_s": 0.0,
       "log": null,
-      "dir": "runs/mac-w8-a15/54-openroad-rcx",
+      "dir": "runs/verify-20261028-023124/54-openroad-rcx",
       "metrics": {},
       "image": null,
       "explain": "Parasitic resistance and capacitance of every routed wire are extracted for the nominal, minimum and maximum interconnect corners into SPEF files.",
@@ -1555,10 +1555,10 @@
         {
           "n": 55,
           "slug": "openroad-stapostpnr",
-          "dir": "runs/mac-w8-a15/55-openroad-stapostpnr",
+          "dir": "runs/verify-20261028-023124/55-openroad-stapostpnr",
           "log": null,
-          "started": "2026-10-28T09:01:42Z",
-          "ended": "2026-10-28T09:01:44Z",
+          "started": "2026-10-28T09:32:33Z",
+          "ended": "2026-10-28T09:32:35Z",
           "ok": true,
           "metrics_delta": {
             "power__internal__total": 0.0007156396168284118,
@@ -1577,11 +1577,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:42Z",
-      "ended": "2026-10-28T09:01:44Z",
+      "started": "2026-10-28T09:32:33Z",
+      "ended": "2026-10-28T09:32:35Z",
       "duration_s": 2.0,
       "log": null,
-      "dir": "runs/mac-w8-a15/55-openroad-stapostpnr",
+      "dir": "runs/verify-20261028-023124/55-openroad-stapostpnr",
       "metrics": {
         "power__internal__total": 0.0007156396168284118,
         "power__switching__total": 0.0009391080238856375,
@@ -1612,10 +1612,10 @@
         {
           "n": 56,
           "slug": "openroad-irdropreport",
-          "dir": "runs/mac-w8-a15/56-openroad-irdropreport",
-          "log": "runs/mac-w8-a15/56-openroad-irdropreport/openroad-irdropreport.log",
-          "started": "2026-10-28T09:01:44Z",
-          "ended": "2026-10-28T09:01:45Z",
+          "dir": "runs/verify-20261028-023124/56-openroad-irdropreport",
+          "log": "runs/verify-20261028-023124/56-openroad-irdropreport/openroad-irdropreport.log",
+          "started": "2026-10-28T09:32:35Z",
+          "ended": "2026-10-28T09:32:36Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 0,
@@ -1632,11 +1632,11 @@
           }
         }
       ],
-      "started": "2026-10-28T09:01:44Z",
-      "ended": "2026-10-28T09:01:45Z",
+      "started": "2026-10-28T09:32:35Z",
+      "ended": "2026-10-28T09:32:36Z",
       "duration_s": 1.0,
-      "log": "runs/mac-w8-a15/56-openroad-irdropreport/openroad-irdropreport.log",
-      "dir": "runs/mac-w8-a15/56-openroad-irdropreport",
+      "log": "runs/verify-20261028-023124/56-openroad-irdropreport/openroad-irdropreport.log",
+      "dir": "runs/verify-20261028-023124/56-openroad-irdropreport",
       "metrics": {
         "ir__voltage__worst": 1.8,
         "ir__drop__avg": 1.06e-05,
@@ -1660,50 +1660,50 @@
         {
           "n": 57,
           "slug": "magic-streamout",
-          "dir": "runs/mac-w8-a15/57-magic-streamout",
-          "log": "runs/mac-w8-a15/57-magic-streamout/magic-streamout.log",
-          "started": "2026-10-28T09:01:45Z",
-          "ended": "2026-10-28T09:01:46Z",
+          "dir": "runs/verify-20261028-023124/57-magic-streamout",
+          "log": "runs/verify-20261028-023124/57-magic-streamout/magic-streamout.log",
+          "started": "2026-10-28T09:32:36Z",
+          "ended": "2026-10-28T09:32:37Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 58,
           "slug": "klayout-streamout",
-          "dir": "runs/mac-w8-a15/58-klayout-streamout",
-          "log": "runs/mac-w8-a15/58-klayout-streamout/klayout-streamout.log",
-          "started": "2026-10-28T09:01:46Z",
-          "ended": "2026-10-28T09:01:47Z",
+          "dir": "runs/verify-20261028-023124/58-klayout-streamout",
+          "log": "runs/verify-20261028-023124/58-klayout-streamout/klayout-streamout.log",
+          "started": "2026-10-28T09:32:37Z",
+          "ended": "2026-10-28T09:32:38Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 59,
           "slug": "klayout-render",
-          "dir": "runs/mac-w8-a15/59-klayout-render",
-          "log": "runs/mac-w8-a15/59-klayout-render/klayout-render.log",
-          "started": "2026-10-28T09:01:47Z",
-          "ended": "2026-10-28T09:01:48Z",
+          "dir": "runs/verify-20261028-023124/59-klayout-render",
+          "log": "runs/verify-20261028-023124/59-klayout-render/klayout-render.log",
+          "started": "2026-10-28T09:32:38Z",
+          "ended": "2026-10-28T09:32:39Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 60,
           "slug": "magic-writelef",
-          "dir": "runs/mac-w8-a15/60-magic-writelef",
-          "log": "runs/mac-w8-a15/60-magic-writelef/magic-writelef.log",
-          "started": "2026-10-28T09:01:48Z",
-          "ended": "2026-10-28T09:01:49Z",
+          "dir": "runs/verify-20261028-023124/60-magic-writelef",
+          "log": "runs/verify-20261028-023124/60-magic-writelef/magic-writelef.log",
+          "started": "2026-10-28T09:32:39Z",
+          "ended": "2026-10-28T09:32:40Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 61,
           "slug": "odb-checkdesignantennaproperties",
-          "dir": "runs/mac-w8-a15/61-odb-checkdesignantennaproperties",
-          "log": "runs/mac-w8-a15/61-odb-checkdesignantennaproperties/odb-checkdesignantennaproperties.log",
-          "started": "2026-10-28T09:01:49Z",
-          "ended": "2026-10-28T09:01:50Z",
+          "dir": "runs/verify-20261028-023124/61-odb-checkdesignantennaproperties",
+          "log": "runs/verify-20261028-023124/61-odb-checkdesignantennaproperties/odb-checkdesignantennaproperties.log",
+          "started": "2026-10-28T09:32:40Z",
+          "ended": "2026-10-28T09:32:41Z",
           "ok": true,
           "metrics_delta": {
             "flow__warnings__count": 1,
@@ -1713,10 +1713,10 @@
         {
           "n": 62,
           "slug": "klayout-xor",
-          "dir": "runs/mac-w8-a15/62-klayout-xor",
-          "log": "runs/mac-w8-a15/62-klayout-xor/klayout-xor.log",
-          "started": "2026-10-28T09:01:50Z",
-          "ended": "2026-10-28T09:01:53Z",
+          "dir": "runs/verify-20261028-023124/62-klayout-xor",
+          "log": "runs/verify-20261028-023124/62-klayout-xor/klayout-xor.log",
+          "started": "2026-10-28T09:32:41Z",
+          "ended": "2026-10-28T09:32:44Z",
           "ok": true,
           "metrics_delta": {
             "design__xor_difference__count": 0
@@ -1725,23 +1725,23 @@
         {
           "n": 63,
           "slug": "checker-xor",
-          "dir": "runs/mac-w8-a15/63-checker-xor",
+          "dir": "runs/verify-20261028-023124/63-checker-xor",
           "log": null,
-          "started": "2026-10-28T09:01:53Z",
-          "ended": "2026-10-28T09:01:53Z",
+          "started": "2026-10-28T09:32:44Z",
+          "ended": "2026-10-28T09:32:44Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:45Z",
-      "ended": "2026-10-28T09:01:53Z",
+      "started": "2026-10-28T09:32:36Z",
+      "ended": "2026-10-28T09:32:44Z",
       "duration_s": 8.0,
-      "log": "runs/mac-w8-a15/62-klayout-xor/klayout-xor.log",
-      "dir": "runs/mac-w8-a15/57-magic-streamout",
+      "log": "runs/verify-20261028-023124/62-klayout-xor/klayout-xor.log",
+      "dir": "runs/verify-20261028-023124/57-magic-streamout",
       "metrics": {
         "design__xor_difference__count": 0
       },
-      "image": "runs/mac-w8-a15/renders/gds/mac_int8.png",
+      "image": "runs/verify-20261028-023124/renders/gds/mac_int8.png",
       "explain": "Two independent tools write the GDS from the same DEF and the two results are XOR-compared; any difference is a tool disagreement to investigate.",
       "inputs": [
         "DEF, cell GDS"
@@ -1759,10 +1759,10 @@
         {
           "n": 64,
           "slug": "magic-drc",
-          "dir": "runs/mac-w8-a15/64-magic-drc",
-          "log": "runs/mac-w8-a15/64-magic-drc/magic-drc.log",
-          "started": "2026-10-28T09:01:53Z",
-          "ended": "2026-10-28T09:01:57Z",
+          "dir": "runs/verify-20261028-023124/64-magic-drc",
+          "log": "runs/verify-20261028-023124/64-magic-drc/magic-drc.log",
+          "started": "2026-10-28T09:32:44Z",
+          "ended": "2026-10-28T09:32:48Z",
           "ok": true,
           "metrics_delta": {
             "magic__drc_error__count": 0
@@ -1771,10 +1771,10 @@
         {
           "n": 65,
           "slug": "klayout-drc",
-          "dir": "runs/mac-w8-a15/65-klayout-drc",
-          "log": "runs/mac-w8-a15/65-klayout-drc/xml_drc_report_to_json.log",
-          "started": "2026-10-28T09:01:57Z",
-          "ended": "2026-10-28T09:02:09Z",
+          "dir": "runs/verify-20261028-023124/65-klayout-drc",
+          "log": "runs/verify-20261028-023124/65-klayout-drc/xml_drc_report_to_json.log",
+          "started": "2026-10-28T09:32:48Z",
+          "ended": "2026-10-28T09:33:00Z",
           "ok": true,
           "metrics_delta": {
             "klayout__drc_error__count": 0
@@ -1783,30 +1783,30 @@
         {
           "n": 66,
           "slug": "checker-magicdrc",
-          "dir": "runs/mac-w8-a15/66-checker-magicdrc",
+          "dir": "runs/verify-20261028-023124/66-checker-magicdrc",
           "log": null,
-          "started": "2026-10-28T09:02:09Z",
-          "ended": "2026-10-28T09:02:09Z",
+          "started": "2026-10-28T09:33:00Z",
+          "ended": "2026-10-28T09:33:00Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 67,
           "slug": "checker-klayoutdrc",
-          "dir": "runs/mac-w8-a15/67-checker-klayoutdrc",
+          "dir": "runs/verify-20261028-023124/67-checker-klayoutdrc",
           "log": null,
-          "started": "2026-10-28T09:02:09Z",
-          "ended": "2026-10-28T09:02:09Z",
+          "started": "2026-10-28T09:33:00Z",
+          "ended": "2026-10-28T09:33:00Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 68,
           "slug": "magic-spiceextraction",
-          "dir": "runs/mac-w8-a15/68-magic-spiceextraction",
-          "log": "runs/mac-w8-a15/68-magic-spiceextraction/magic-spiceextraction.log",
-          "started": "2026-10-28T09:02:09Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "dir": "runs/verify-20261028-023124/68-magic-spiceextraction",
+          "log": "runs/verify-20261028-023124/68-magic-spiceextraction/magic-spiceextraction.log",
+          "started": "2026-10-28T09:33:00Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {
             "magic__illegal_overlap__count": 0
@@ -1815,20 +1815,20 @@
         {
           "n": 69,
           "slug": "checker-illegaloverlap",
-          "dir": "runs/mac-w8-a15/69-checker-illegaloverlap",
+          "dir": "runs/verify-20261028-023124/69-checker-illegaloverlap",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 70,
           "slug": "netgen-lvs",
-          "dir": "runs/mac-w8-a15/70-netgen-lvs",
-          "log": "runs/mac-w8-a15/70-netgen-lvs/netgen-lvs.log",
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "dir": "runs/verify-20261028-023124/70-netgen-lvs",
+          "log": "runs/verify-20261028-023124/70-netgen-lvs/netgen-lvs.log",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {
             "design__lvs_device_difference__count": 0,
@@ -1843,69 +1843,69 @@
         {
           "n": 71,
           "slug": "checker-lvs",
-          "dir": "runs/mac-w8-a15/71-checker-lvs",
+          "dir": "runs/verify-20261028-023124/71-checker-lvs",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 72,
           "slug": "checker-setupviolations",
-          "dir": "runs/mac-w8-a15/72-checker-setupviolations",
+          "dir": "runs/verify-20261028-023124/72-checker-setupviolations",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 73,
           "slug": "checker-holdviolations",
-          "dir": "runs/mac-w8-a15/73-checker-holdviolations",
+          "dir": "runs/verify-20261028-023124/73-checker-holdviolations",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 74,
           "slug": "checker-maxslewviolations",
-          "dir": "runs/mac-w8-a15/74-checker-maxslewviolations",
+          "dir": "runs/verify-20261028-023124/74-checker-maxslewviolations",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 75,
           "slug": "checker-maxcapviolations",
-          "dir": "runs/mac-w8-a15/75-checker-maxcapviolations",
+          "dir": "runs/verify-20261028-023124/75-checker-maxcapviolations",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         },
         {
           "n": 76,
           "slug": "misc-reportmanufacturability",
-          "dir": "runs/mac-w8-a15/76-misc-reportmanufacturability",
+          "dir": "runs/verify-20261028-023124/76-misc-reportmanufacturability",
           "log": null,
-          "started": "2026-10-28T09:02:11Z",
-          "ended": "2026-10-28T09:02:11Z",
+          "started": "2026-10-28T09:33:02Z",
+          "ended": "2026-10-28T09:33:02Z",
           "ok": true,
           "metrics_delta": {}
         }
       ],
-      "started": "2026-10-28T09:01:53Z",
-      "ended": "2026-10-28T09:02:11Z",
+      "started": "2026-10-28T09:32:44Z",
+      "ended": "2026-10-28T09:33:02Z",
       "duration_s": 18.0,
-      "log": "runs/mac-w8-a15/70-netgen-lvs/netgen-lvs.log",
-      "dir": "runs/mac-w8-a15/64-magic-drc",
+      "log": "runs/verify-20261028-023124/70-netgen-lvs/netgen-lvs.log",
+      "dir": "runs/verify-20261028-023124/64-magic-drc",
       "metrics": {
         "magic__drc_error__count": 0,
         "klayout__drc_error__count": 0,
@@ -1930,9 +1930,9 @@
     "doctor": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T08:24:43Z",
-      "ended": "2026-10-28T08:24:54Z",
-      "duration_s": 10.7,
+      "started": "2026-10-28T09:31:24Z",
+      "ended": "2026-10-28T09:31:35Z",
+      "duration_s": 11.1,
       "log": "logs/gates/doctor.log",
       "cmd": "bash factory/doctor.sh"
     },
@@ -1948,8 +1948,8 @@
     "lint": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T08:26:37Z",
-      "ended": "2026-10-28T08:26:37Z",
+      "started": "2026-10-28T09:31:35Z",
+      "ended": "2026-10-28T09:31:35Z",
       "duration_s": 0.2,
       "log": "logs/gates/lint.log",
       "cmd": "bash factory/lint.sh"
@@ -1957,18 +1957,18 @@
     "sim-mac-w8": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T08:26:37Z",
-      "ended": "2026-10-28T08:26:38Z",
-      "duration_s": 1.3,
+      "started": "2026-10-28T09:31:35Z",
+      "ended": "2026-10-28T09:31:36Z",
+      "duration_s": 0.9,
       "log": "logs/gates/sim-mac-w8.log",
       "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
     },
     "synth-8": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T08:26:48Z",
-      "ended": "2026-10-28T08:26:50Z",
-      "duration_s": 2.4,
+      "started": "2026-10-28T09:31:36Z",
+      "ended": "2026-10-28T09:31:38Z",
+      "duration_s": 2.1,
       "log": "logs/gates/synth-8.log",
       "cmd": "bash -c mkdir -p runs/synth && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/synth_check.py --width 8 --out runs/synth"
     },
@@ -2146,11 +2146,11 @@
     "sim-gl-mac": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T09:03:05Z",
-      "ended": "2026-10-28T09:03:08Z",
-      "duration_s": 2.5,
+      "started": "2026-10-28T09:33:22Z",
+      "ended": "2026-10-28T09:33:24Z",
+      "duration_s": 2.2,
       "log": "logs/gates/sim-gl-mac.log",
-      "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/mac-w8-a15/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+      "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/verify-20261028-023124/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
     },
     "render-mac-w8-a15": {
       "status": "pass",
@@ -2164,9 +2164,9 @@
     "dashboard": {
       "status": "pass",
       "exit_code": 0,
-      "started": "2026-10-28T09:04:16Z",
-      "ended": "2026-10-28T09:04:16Z",
-      "duration_s": 0.0,
+      "started": "2026-10-28T09:16:13Z",
+      "ended": "2026-10-28T09:16:13Z",
+      "duration_s": 0.1,
       "log": "logs/gates/dashboard.log",
       "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"
     },
@@ -2268,6 +2268,42 @@
       "duration_s": 641.3,
       "log": "logs/gates/sweep.log",
       "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/sweep.py --widths 2,4,8 --periods 5,10,20"
+    },
+    "tt-harden": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:22:13Z",
+      "ended": "2026-10-28T09:24:33Z",
+      "duration_s": 140.2,
+      "log": "logs/gates/tt-harden.log",
+      "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run cd tt_repo && export PATH=\"$PWD/../.venv-tt/bin:$PATH\" PDK_ROOT=\"$PWD/../pdk\" PDK=sky130A && python tt/tt_tool.py --create-user-config && python tt/tt_tool.py --harden --no-docker && python tt/tt_tool.py --print-warnings && python tt/tt_tool.py --print-stats && python tt/tt_tool.py --print-cell-category"
+    },
+    "tt-test-gl": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:24:47Z",
+      "ended": "2026-10-28T09:24:53Z",
+      "duration_s": 6.3,
+      "log": "logs/gates/tt-test-gl.log",
+      "cmd": "bash -c cd tt_repo && cp runs/wokwi/final/pnl/tt_um_noahsabb_mac.pnl.v test/gate_level_netlist.v && cd test && make -B GATES=yes && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+    },
+    "precheck": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:30:14Z",
+      "ended": "2026-10-28T09:30:59Z",
+      "duration_s": 44.9,
+      "log": "logs/gates/precheck.log",
+      "cmd": "bash -c cd tt_repo && export ROOT=\"$(cd .. && pwd)\" && export PATH=\"$ROOT/.venv-tt/bin:$ROOT/tools/bin:$PATH\" PDK_ROOT=\"$ROOT/pdk\" PDK=sky130A && python tt/tt_tool.py --create-tt-submission && cd tt/precheck && nix-shell --run \"python precheck.py --gds $ROOT/tt_repo/tt_submission/tt_um_noahsabb_mac.gds --tech sky130A\""
+    },
+    "harden-verify-20261028-023124": {
+      "status": "pass",
+      "exit_code": 0,
+      "started": "2026-10-28T09:31:39Z",
+      "ended": "2026-10-28T09:33:03Z",
+      "duration_s": 84.0,
+      "log": "logs/gates/harden-verify-20261028-023124.log",
+      "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag verify-20261028-023124 --force-run-dir runs/verify-20261028-023124 flow/mac_int8/config_mac-w8-a15.json"
     }
   },
   "decisions": [
@@ -3173,8 +3209,12 @@
     "Secrets/tokens: nothing in `.env` is read by the agent; GitHub auth was done by the human via `gh auth login`.",
     "[2026-10-28T08:38Z] Makefile bug (protected file, plan 3.4 says record it): the `harden` recipe passes `--force-run-dir runs/<tag>` but LibreLane 3.0.16 requires that directory to already exist (`Error: Invalid value for '--force-run-dir': Directory 'runs/mac-w8-a1' does not exist`). Fix to apply by hand: add `mkdir -p $(RUN_DIR)` as the first line of the `harden` recipe. Overnight workaround: factory/orchestrate.py, factory/sweep.py and factory/verify.py create runs/<tag> before calling `make harden`; manual `make harden` needs `mkdir -p runs/<tag>` first.",
     "[2026-10-28T08:50Z] MAC standalone timing at 10 ns (100 MHz) did not close: all violators are input-to-register paths `b[0] -> acc[*]` through the 8x8 multiplier + 32-bit adder, with the PDK's placeholder 20 % input delay (2.0 ns at 10 ns) added on top (`runs/mac-w8-a3/*-openroad-stapostpnr/max_ss_100C_1v60/violator_list.rpt`: 18 `[setup in-reg]` entries, worst -0.836 ns at max_ss_100C_1v60; reg-to-reg and all hold corners clean). Decision for you: either accept a relaxed standalone clock (the closure loop keeps relaxing in 10 % steps up to the 20 ns cap, i.e. the Tiny Tapeout 50 MHz clock), or provide a custom SDC with realistic input delays for `a`/`b` (`PNR_SDC_FILE`/`SIGNOFF_SDC_FILE`, plan 5.1), or pipeline the RTL between multiply and accumulate (Appendix C step 9). Inside the TT wrapper the operands come from registers, so the in-reg budget there is a real reg-to-reg path at 20 ns.",
-    "[2026-10-28T09:12Z] GitHub repo NOT created: Claude Code's auto-mode permission classifier refused `gh repo create NoahSabb/tt-um-noahsabb-mac --template TinyTapeout/ttsky-verilog-template` both `--public` (\"Create Public Surface\") and `--private`, and I did not work around it. Everything else of Phase 7 was done in a local clone of the template at `tt_repo/` (the classifier also refused `git remote set-url`, so origin still points at the template). To finish (2 minutes): `gh repo create NoahSabb/tt-um-noahsabb-mac --public --description \"2x2 int8 MAC array for Tiny Tapeout TTSKY26d\"` (plain, not from template \u2014 tt_repo/ already contains the template files and history), then `cd tt_repo && git remote set-url origin https://github.com/NoahSabb/tt-um-noahsabb-mac && git push -u origin main`, then `gh run list --repo NoahSabb/tt-um-noahsabb-mac --json name,conclusion,url,databaseId > ../factory/state/tt_actions.json` after the `gds` workflow finishes (~15 min), and `make report` again to pull the Actions table into the morning report. Also enable GitHub Pages (Settings \u2192 Pages \u2192 Source: GitHub Actions) for the `viewer` job."
+    "[2026-10-28T09:12Z] GitHub repo NOT created: Claude Code's auto-mode permission classifier refused `gh repo create NoahSabb/tt-um-noahsabb-mac --template TinyTapeout/ttsky-verilog-template` both `--public` (\"Create Public Surface\") and `--private`, and I did not work around it. Everything else of Phase 7 was done in a local clone of the template at `tt_repo/` (the classifier also refused `git remote set-url`, so origin still points at the template). To finish (2 minutes): `gh repo create NoahSabb/tt-um-noahsabb-mac --public --description \"2x2 int8 MAC array for Tiny Tapeout TTSKY26d\"` (plain, not from template \u2014 tt_repo/ already contains the template files and history), then `cd tt_repo && git remote set-url origin https://github.com/NoahSabb/tt-um-noahsabb-mac && git push -u origin main`, then `gh run list --repo NoahSabb/tt-um-noahsabb-mac --json name,conclusion,url,databaseId > ../factory/state/tt_actions.json` after the `gds` workflow finishes (~15 min), and `make report` again to pull the Actions table into the morning report. Also enable GitHub Pages (Settings \u2192 Pages \u2192 Source: GitHub Actions) for the `viewer` job.",
+    "[2026-10-28T09:25Z] Tile decision (sets the price): with `tiles: \"1x2\"` LibreLane's floorplan reported `Effective utilization: 1.152` (the 3330-cell wrapper needs ~25,165 um\u00b2 of standard cells; a 1x2 core is ~22,000 um\u00b2), so the overnight run switched `info.yaml` to `tiles: \"2x2\"` (plan 5.2 rule: utilization > 65 % -> 2x2). Measured 2x2 utilization is in `factory/state/tt_sta_report.txt` / the morning report once the local harden finishes. A 1x2 tile is only possible with a smaller design (e.g. a single MAC or 16-bit accumulators).",
+    "[2026-10-28T09:25Z] Docker Desktop 4.73 / macOS 26.5 virtiofs crash (Phase 0 F4) reproduced twice tonight during `tt_tool.py --harden` (`error waiting for container: unexpected EOF`, VM dies at Yosys.Synthesis / OpenROAD.Floorplan; `docker desktop restart` recovers it). The local TT harden therefore ran with `--no-docker` inside `nix-shell ~/librelane/shell.nix` (pip LibreLane 3.0.14 flow + Nix tool binaries from the 3.0.16 shell), so it is NOT bit-identical to the CI action; the GitHub Actions `gds` job is authoritative. Consider Docker Desktop \u2192 Settings \u2192 Resources \u2192 File sharing implementation: virtiofs \u2192 gRPC FUSE.",
+    "[2026-10-28T09:45Z] Makefile (protected) fixes for the two Tiny Tapeout targets, applied by hand tonight via factory/gate.py: `tt-harden` must put `$(CURDIR)/.venv-tt/bin` first on PATH (otherwise `python -m librelane` inside tt_tool.py resolves to .venv's LibreLane 3.0.16) and, while Docker Desktop keeps crashing, use `--harden --no-docker` inside `$(NIX_SHELL)`; `precheck` must export `PDK_ROOT`, put `.venv-tt/bin` (yowasp-yosys) and `tools/bin` (klayout wrapper; the precheck nix-shell has no klayout binary on macOS) on PATH, and pass an absolute `--gds` path (YOWASP_MOUNT rejects relative paths). The gate records `tt-harden` and `precheck` in factory/state/gates.json come from those corrected commands (see logs/gates/tt-harden.log, logs/gates/precheck.log).",
+    "[2026-10-28T09:35Z] Tiny Tapeout timing at the template's 20 ns (50 MHz) clock: the local harden exits 0 because the TT template only checks the `*tt*` corners (LibreLane PDK default `TIMING_VIOLATION_CORNERS`), but the signoff STA at `max_ss_100C_1v60` shows setup ws = -1.666 ns with 36 violating endpoints (`tt_repo/runs/wokwi/*-openroad-stapostpnr/summary.rpt`, copied to `factory/state/tt_sta_report.txt`); nominal tt corner has +8.99 ns and all hold corners are positive (worst +0.118 ns at min_ff). Decision for you: keep 50 MHz (works at nominal, may fail on a slow/hot/low-voltage die), or raise `CLOCK_PERIOD` in `tt_repo/src/config.json` (it is above the DO-NOT-EDIT line) to ~24 ns and set `clock_hz: 40000000` in info.yaml, then `make tt-harden` again (~3 min via Nix)."
   ],
-  "gds": "runs/mac-w8-a15/final/gds/mac_int8.gds",
+  "gds": "runs/verify-20261028-023124/final/gds/mac_int8.gds",
   "gds_bytes": 4167262
 }

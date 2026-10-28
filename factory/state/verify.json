@@ -1,0 +1,53 @@
+{
+  "a_doctor": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "a_lint": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "a_sim_rtl": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "a_synth": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "a_harden": {
+    "ok": true,
+    "detail": "exit 0 tag verify-20261028-023124"
+  },
+  "e_sim_gl_vs_golden": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "a_render": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "b_gates": {
+    "ok": true,
+    "detail": "missing=[] failed=[]"
+  },
+  "c_pipeline_all_pass": {
+    "ok": true,
+    "detail": "run_tag=verify-20261028-023124 status=pass bad_stations=[]"
+  },
+  "d_gds_and_svg": {
+    "ok": true,
+    "detail": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/verify-20261028-023124/final/gds/mac_int8.gds 4167262 bytes; svg 6521314 bytes; top cell mac_int8"
+  },
+  "f_eqy_experimental": {
+    "ok": false,
+    "detail": "exit 255;                                     \n                    '/Users/noahsabbavarapu/Documents/GitHub/spe                \n                    c2tapeout/runs/verify-20261028-023124/eqy/sc                \n                    ratch']) failed                                             \nwarning: Using 'builtins.derivation' to create a derivation named 'devshell-env.bash' that references the store path '/nix/store/sizirny50f893gx0gbivbqyys4fxghnq-source' without a proper context. The resulting derivation will not have a correct store reference, so this is unreliable and may stop working in the future.\n",
+    "required": false
+  },
+  "g_dashboard": {
+    "ok": true,
+    "detail": "exit 0"
+  },
+  "_tag": "verify-20261028-023124",
+  "_time": "2026-10-28T09:33:48Z"
+}

@@ -1,0 +1,11 @@
+/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/report.py
+# Morning report — spec2tapeout factory
+
+Generated 2026-10-28T02:34:47 after 1.52 h of autonomous work. Git head: `e32155a phase 7: Tiny Tapeout project built, hardened (2x2 tile, Nix), gate-level tested, precheck 15/15 locally; repo creation/push left to human (classifier denial)`.
+
+## Headline (read this first)
+- **MAC (`mac_int8`, WIDTH 8 / ACC 32) closed timing on sky130A at CLOCK_PERIOD 16.1 ns** (SYNTH_STRATEGY `DELAY 1`, FP_CORE_UTIL 30.0) in closure run `mac-w8-a15` after 14 recorded decisions; it did **not** close at the 10 ns target (all violators are input-to-register paths through the multiplier with the PDK's 20 % placeholder input delay — see NEEDS HUMAN). Signoff STA, both DRC decks, LVS, XOR and antenna are clean; the gate-level netlist passes the frozen golden vectors.
+- **verify-factory: PASS** (fresh run `verify-20261028-023124` from clean; eqy is experimental and failed, informational only).
+- **Sweep:** 9 runs with metrics, 4 close timing (WIDTH 2 closes at 10 ns and 20 ns; WIDTH 4 and 8 only at 20 ns).
+- **Tiny Tapeout:** local harden `pass` on a **2x2 tile** (1x2 was 115 % utilised), gate-level TT test `pass`, local precheck `pass` (15/15 checks). The GitHub repository was **not created**: the Claude Code permission classifier refused `gh repo create` (public and private); `tt_repo/` holds the ready-to-push commit and NEEDS HUMAN lists the 3 commands to finish. At the template's 20 ns clock the TT design passes the template's nominal-corner check but ha
+/Applications/Xcode.app/Contents/Developer/usr/bin/make log MSG="REPORT written reports/MORNING_REPORT.md"

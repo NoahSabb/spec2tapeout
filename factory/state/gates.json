@@ -2,9 +2,9 @@
   "doctor": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T08:24:43Z",
-    "ended": "2026-10-28T08:24:54Z",
-    "duration_s": 10.7,
+    "started": "2026-10-28T09:31:24Z",
+    "ended": "2026-10-28T09:31:35Z",
+    "duration_s": 11.1,
     "log": "logs/gates/doctor.log",
     "cmd": "bash factory/doctor.sh"
   },
@@ -20,8 +20,8 @@
   "lint": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T08:26:37Z",
-    "ended": "2026-10-28T08:26:37Z",
+    "started": "2026-10-28T09:31:35Z",
+    "ended": "2026-10-28T09:31:35Z",
     "duration_s": 0.2,
     "log": "logs/gates/lint.log",
     "cmd": "bash factory/lint.sh"
@@ -29,18 +29,18 @@
   "sim-mac-w8": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T08:26:37Z",
-    "ended": "2026-10-28T08:26:38Z",
-    "duration_s": 1.3,
+    "started": "2026-10-28T09:31:35Z",
+    "ended": "2026-10-28T09:31:36Z",
+    "duration_s": 0.9,
     "log": "logs/gates/sim-mac-w8.log",
     "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac WIDTH=8 ACC_WIDTH=32 GATES=no && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
   },
   "synth-8": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T08:26:48Z",
-    "ended": "2026-10-28T08:26:50Z",
-    "duration_s": 2.4,
+    "started": "2026-10-28T09:31:36Z",
+    "ended": "2026-10-28T09:31:38Z",
+    "duration_s": 2.1,
     "log": "logs/gates/synth-8.log",
     "cmd": "bash -c mkdir -p runs/synth && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/synth_check.py --width 8 --out runs/synth"
   },
@@ -218,11 +218,11 @@
   "sim-gl-mac": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T09:03:05Z",
-    "ended": "2026-10-28T09:03:08Z",
-    "duration_s": 2.5,
+    "started": "2026-10-28T09:33:22Z",
+    "ended": "2026-10-28T09:33:24Z",
+    "duration_s": 2.2,
     "log": "logs/gates/sim-gl-mac.log",
-    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/mac-w8-a15/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
+    "cmd": "bash -c cd tests && /Applications/Xcode.app/Contents/Developer/usr/bin/make -B TOP=mac GATES=yes GL_NETLIST=/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/verify-20261028-023124/final/pnl/mac_int8.pnl.v && /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python -m cocotb_tools.check_results results.xml"
   },
   "render-mac-w8-a15": {
     "status": "pass",
@@ -236,8 +236,8 @@
   "dashboard": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T09:16:13Z",
-    "ended": "2026-10-28T09:16:13Z",
+    "started": "2026-10-28T09:34:56Z",
+    "ended": "2026-10-28T09:34:56Z",
     "duration_s": 0.1,
     "log": "logs/gates/dashboard.log",
     "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"
@@ -367,5 +367,32 @@
     "duration_s": 44.9,
     "log": "logs/gates/precheck.log",
     "cmd": "bash -c cd tt_repo && export ROOT=\"$(cd .. && pwd)\" && export PATH=\"$ROOT/.venv-tt/bin:$ROOT/tools/bin:$PATH\" PDK_ROOT=\"$ROOT/pdk\" PDK=sky130A && python tt/tt_tool.py --create-tt-submission && cd tt/precheck && nix-shell --run \"python precheck.py --gds $ROOT/tt_repo/tt_submission/tt_um_noahsabb_mac.gds --tech sky130A\""
+  },
+  "harden-verify-20261028-023124": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:31:39Z",
+    "ended": "2026-10-28T09:33:03Z",
+    "duration_s": 84.0,
+    "log": "logs/gates/harden-verify-20261028-023124.log",
+    "cmd": "nix-shell /Users/noahsabbavarapu/librelane/shell.nix --run librelane --pdk-root /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/pdk --run-tag verify-20261028-023124 --force-run-dir runs/verify-20261028-023124 flow/mac_int8/config_mac-w8-a15.json"
+  },
+  "render-verify-20261028-023124": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:33:24Z",
+    "ended": "2026-10-28T09:33:43Z",
+    "duration_s": 18.7,
+    "log": "logs/gates/render-verify-20261028-023124.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/render.py --run-dir runs/verify-20261028-023124 --design mac_int8"
+  },
+  "verify-factory": {
+    "status": "pass",
+    "exit_code": 0,
+    "started": "2026-10-28T09:31:24Z",
+    "ended": "2026-10-28T09:33:48Z",
+    "duration_s": 144.3,
+    "log": "logs/gates/verify-factory.log",
+    "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/verify.py"
   }
 }

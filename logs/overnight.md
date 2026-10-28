@@ -160,3 +160,35 @@
 2026-10-28T09:30:14Z PHASE 7 precheck attempts 2-4: PDK_ROOT unset in my direct gate call; the precheck nix-shell has no klayout binary on macOS (nixpkgs ships only klayout.app) so tools/bin/klayout (0.30.12) is used; YOWASP_MOUNT needs an absolute --gds path. Attempt 5 with all three fixed
 2026-10-28T09:30:59Z GATE precheck PASS exit=0 log=logs/gates/precheck.log
 2026-10-28T09:31:24Z PHASE 7: tt_repo committed locally (not pushed: repo creation denied by the permission classifier, see NEEDS_HUMAN.md); GitHub Actions run cannot be recorded
+2026-10-28T09:31:24Z PHASE 7 END
+2026-10-28T09:31:24Z PHASE 8 START
+2026-10-28T09:31:35Z GATE doctor PASS exit=0 log=logs/gates/doctor.log
+2026-10-28T09:31:35Z VERIFY a_doctor: PASS exit 0
+2026-10-28T09:31:35Z GATE lint PASS exit=0 log=logs/gates/lint.log
+2026-10-28T09:31:35Z VERIFY a_lint: PASS exit 0
+2026-10-28T09:31:36Z GATE sim-mac-w8 PASS exit=0 log=logs/gates/sim-mac-w8.log
+2026-10-28T09:31:36Z VERIFY a_sim_rtl: PASS exit 0
+2026-10-28T09:31:38Z GATE synth-8 PASS exit=0 log=logs/gates/synth-8.log
+2026-10-28T09:31:38Z VERIFY a_synth: PASS exit 0
+2026-10-28T09:33:03Z GATE harden-verify-20261028-023124 PASS exit=0 log=logs/gates/harden-verify-20261028-023124.log
+2026-10-28T09:33:22Z INGEST verify-20261028-023124: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
+2026-10-28T09:33:22Z VERIFY a_harden: PASS exit 0 tag verify-20261028-023124
+2026-10-28T09:33:24Z GATE sim-gl-mac PASS exit=0 log=logs/gates/sim-gl-mac.log
+2026-10-28T09:33:24Z VERIFY e_sim_gl_vs_golden: PASS exit 0
+2026-10-28T09:33:24Z INGEST verify-20261028-023124: status=pass setup_ws=0.5712657175665821 hold_ws=0.11170553687111831 drc=0 lvs=0 cells=10662 source=final/metrics.json
+2026-10-28T09:33:43Z GATE render-verify-20261028-023124 PASS exit=0 log=logs/gates/render-verify-20261028-023124.log
+2026-10-28T09:33:43Z VERIFY a_render: PASS exit 0
+2026-10-28T09:33:43Z VERIFY b_gates: PASS missing=[] failed=[]
+2026-10-28T09:33:43Z VERIFY c_pipeline_all_pass: PASS run_tag=verify-20261028-023124 status=pass bad_stations=[]
+2026-10-28T09:33:43Z VERIFY d_gds_and_svg: PASS /Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/runs/verify-20261028-023124/final/gds/mac_int8.gds 4167262 bytes; svg 6521314 bytes; top cell mac_int8
+2026-10-28T09:33:48Z VERIFY f_eqy_experimental: False exit 255;                                     
+                    '/Users/noahsabbavarapu/Documents/GitHub/spe                
+                    c2tapeout/runs/verify-20261028-023124/eqy/sc        
+2026-10-28T09:33:48Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
+2026-10-28T09:33:48Z VERIFY g_dashboard: PASS exit 0
+2026-10-28T09:33:48Z GATE verify-factory PASS exit=0 log=logs/gates/verify-factory.log
+2026-10-28T09:34:11Z PHASE 8: verify-factory PASS (a_doctor a_lint a_sim_rtl a_synth a_harden e_sim_gl_vs_golden a_render b_gates c_pipeline_all_pass d_gds_and_svg g_dashboard all PASS; f_eqy_experimental FAIL exit 255, informational: LibreLane's generic EQY script, see runs/verify-20261028-023124/eqy)
+2026-10-28T09:34:12Z REPORT written reports/MORNING_REPORT.md
+2026-10-28T09:34:47Z REPORT written reports/MORNING_REPORT.md
+2026-10-28T09:34:56Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
+2026-10-28T09:34:56Z PHASE 8 END

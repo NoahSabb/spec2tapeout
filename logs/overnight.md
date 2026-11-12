@@ -192,3 +192,5 @@
 2026-10-28T09:34:47Z REPORT written reports/MORNING_REPORT.md
 2026-10-28T09:34:56Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
 2026-10-28T09:34:56Z PHASE 8 END
+2026-10-28T19:08:05Z GATE dashboard PASS exit=0 log=logs/gates/dashboard.log
+2026-10-28T19:11:54Z DASHBOARD FIX: page was blank because json.dumps emitted bare Infinity for timing__setup_r2r__ws (inf), which browser JSON.parse rejects; build.py now stringifies non-finite floats and dumps with allow_nan=False; server restarted; jsdom render check: 22 stations, 10 timing rows, 44 gates, 14 decisions, 9 sweep rows + 3 plots, 17 NEEDS_HUMAN items

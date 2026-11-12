@@ -21,3 +21,20 @@ logs/gates/
 .DS_Store
 .vscode/
 .idea/
+
+# personal / interview prep (not part of the flow evidence)
+reports/RESUME_FACTS.md
+reports/RESUME_*.md
+
+# local-only noise
+logs/raw/serve.log
+settings.local.json
+.env
+.env.*
+nohup.out
+node_modules/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.swp
+*~

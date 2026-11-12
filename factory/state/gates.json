@@ -236,8 +236,8 @@
   "dashboard": {
     "status": "pass",
     "exit_code": 0,
-    "started": "2026-10-28T09:34:56Z",
-    "ended": "2026-10-28T09:34:56Z",
+    "started": "2026-10-28T19:08:05Z",
+    "ended": "2026-10-28T19:08:05Z",
     "duration_s": 0.1,
     "log": "logs/gates/dashboard.log",
     "cmd": "/Users/noahsabbavarapu/Documents/GitHub/spec2tapeout/.venv/bin/python factory/dashboard/build.py"

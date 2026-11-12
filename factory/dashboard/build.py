@@ -34,7 +34,17 @@ try:
     start = float(open(os.path.join(STATE, "start_time")).read().strip()); import time; data["elapsed_s"] = int(time.time() - start)
 except Exception: data["elapsed_s"] = None
 tpl = open(os.path.join(HERE, "template.html")).read()
-html = tpl.replace("__DATA_JSON__", json.dumps(data).replace("</", "<\\/"))
+# Browsers' JSON.parse rejects the bare NaN/Infinity tokens that json.dumps emits for non-finite floats
+# (e.g. timing__setup_r2r__ws = inf when a corner has no reg-to-reg path), so stringify them for the page.
+def finite(o):
+    if isinstance(o, float) and o != o: return "nan"
+    if isinstance(o, float) and o in (float("inf"), float("-inf")): return "inf" if o > 0 else "-inf"
+    if isinstance(o, dict): return {k: finite(v) for k, v in o.items()}
+    if isinstance(o, list): return [finite(v) for v in o]
+    return o
+data = finite(data)
+payload = json.dumps(data, allow_nan=False)
+html = tpl.replace("__DATA_JSON__", payload.replace("</", "<\\/"))
 open(os.path.join(SITE, "index.html"), "w").write(html)
-json.dump(data, open(os.path.join(SITE, "pipeline.json"), "w"))
+open(os.path.join(SITE, "pipeline.json"), "w").write(payload)
 print("wrote", os.path.join(SITE, "index.html"), "stations:", len(data.get("stations", [])), "gates:", len(data["gates"]), "decisions:", len(data["decisions"]))
